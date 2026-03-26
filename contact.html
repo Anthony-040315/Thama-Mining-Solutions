@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Thama Mining Solutions | Get a Quote</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome 6 (free) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        :root {
+            --color-dark: #1A1A1A;
+            --color-red: #C62828;
+            --color-gold: #D4A017;
+            --color-light: #F5F5F5;
+        }
+        body { font-family: 'Inter', system-ui, -apple-system, sans-serif; }
+        .bg-dark { background-color: var(--color-dark); }
+        .bg-light { background-color: var(--color-light); }
+        .text-red { color: var(--color-red); }
+        .text-gold { color: var(--color-gold); }
+        .btn-red {
+            background-color: var(--color-red);
+            transition: background-color 0.2s;
+        }
+        .btn-red:hover { background-color: #a82323; }
+        .floating-wa {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            z-index: 50;
+            background-color: #25D366;
+            border-radius: 50%;
+            width: 56px;
+            height: 56px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            transition: transform 0.2s;
+        }
+        .floating-wa:hover { transform: scale(1.05); }
+        .floating-wa i { font-size: 28px; color: white; }
+        /* Footer background */
+        .footer-bg {
+            background-image: url('https://images.unsplash.com/photo-1581092336388-4b3a25f5e95c?auto=format&fit=crop&q=80');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+        .footer-bg::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(26, 26, 26, 0.9);
+            z-index: 1;
+        }
+        .footer-bg > * {
+            position: relative;
+            z-index: 2;
+        }
+    </style>
+</head>
+<body class="bg-light text-dark font-sans antialiased">
+
+    <!-- Navbar with logo image (matching homepage) -->
+    <nav class="bg-dark text-white py-4 px-6 md:px-12 flex justify-between items-center sticky top-0 z-40">
+        <div class="flex items-center">
+            <img src="images/Thama Mining Solutions LOGO.jpeg" alt="Thama Mining Solutions" class="h-12">
+        </div>
+        <div class="hidden md:flex space-x-8 font-medium">
+            <a href="index.html" class="hover:text-gold transition">Home</a>
+            <a href="about.html" class="hover:text-gold transition">About</a>
+            <a href="services.html" class="hover:text-gold transition">Services</a>
+            <a href="contact.html" class="text-gold border-b-2 border-gold pb-1">Contact</a>
+        </div>
+        <div class="md:hidden"><i class="fas fa-bars text-2xl"></i></div>
+        <a href="tel:0812474607" class="hidden md:inline-block bg-red-600 hover:bg-red-700 text-white px-5 py-2 rounded font-semibold transition">
+            <i class="fas fa-phone-alt mr-2"></i> Call Now
+        </a>
+    </nav>
+
+    <!-- Page Title -->
+    <section class="relative bg-dark text-white py-20">
+        <div class="absolute inset-0 bg-cover bg-center opacity-20" style="background-image: url('https://images.unsplash.com/photo-1581094288338-2314dddb7ece?auto=format&fit=crop&q=80');"></div>
+        <div class="relative container mx-auto px-6 text-center">
+            <h1 class="text-4xl md:text-5xl font-bold">Contact Us</h1>
+            <div class="w-20 h-1 bg-gold mx-auto mt-4"></div>
+            <p class="text-xl text-gray-200 mt-4 max-w-2xl mx-auto">Reach out for quotes, emergency call‑outs, or general inquiries.</p>
+        </div>
+    </section>
+
+    <!-- Contact Info & Form -->
+    <section class="bg-white py-16">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-2 gap-12">
+                <!-- Left: Contact details (no WhatsApp, inline icons remain) -->
+                <div>
+                    <h2 class="text-2xl font-bold text-dark">Get in Touch</h2>
+                    <div class="w-12 h-1 bg-gold my-4"></div>
+                    <div class="space-y-6">
+                        <div class="flex items-start gap-4">
+                            <i class="fas fa-phone-alt text-red text-2xl mt-1"></i>
+                            <div>
+                                <h3 class="font-semibold">Phone</h3>
+                                <p><a href="tel:0812474607" class="hover:text-red">081 247 4607</a></p>
+                                <p class="text-sm text-gray-500">Available 6am–5pm Mon–Fri, 7am–3pm Sat</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <i class="fas fa-envelope text-red text-2xl mt-1"></i>
+                            <div>
+                                <h3 class="font-semibold">Email</h3>
+                                <p><a href="mailto:thabom@thamaminingsolutions.com" class="hover:text-red">thabom@thamaminingsolutions.com</a></p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <i class="fas fa-map-marker-alt text-red text-2xl mt-1"></i>
+                            <div>
+                                <h3 class="font-semibold">Address</h3>
+                                <p>1348 Magongoa Village, Mokopane, 0601, South Africa</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Map placeholder -->
+                    <div class="mt-8 h-64 bg-light rounded-lg overflow-hidden shadow">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14414.117857732442!2d29.044322!3d-24.185964!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1ec099fd47dfc4df%3A0xab9a0c5dddb7a3b0!2sMokopane%2C%200600!5e0!3m2!1sen!2sza!4v1691768285123!5m2!1sen!2sza" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                </div>
+
+                <!-- Right: Request a Quote Form -->
+                <div>
+                    <h2 class="text-2xl font-bold text-dark">Request a Quote</h2>
+                    <div class="w-12 h-1 bg-gold my-4"></div>
+                    <form action="#" method="POST" class="space-y-4">
+                        <div>
+                            <label class="block text-gray-700 font-medium mb-1">Name <span class="text-red">*</span></label>
+                            <input type="text" required class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-red-500">
+                        </div>
+                        <div>
+                            <label class="block text-gray-700 font-medium mb-1">Company <span class="text-gray-400 text-sm">(optional)</span></label>
+                            <input type="text" class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-red-500">
+                        </div>
+                        <div>
+                            <label class="block text-gray-700 font-medium mb-1">Email <span class="text-red">*</span></label>
+                            <input type="email" required class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-red-500">
+                        </div>
+                        <div>
+                            <label class="block text-gray-700 font-medium mb-1">Phone <span class="text-red">*</span></label>
+                            <input type="tel" required class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-red-500">
+                        </div>
+                        <div>
+                            <label class="block text-gray-700 font-medium mb-1">Service Required</label>
+                            <select class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-red-500 bg-white">
+                                <option value="">-- Select a service --</option>
+                                <option>Pipe &amp; Fluid Systems (HDPE Welding)</option>
+                                <option>Conveyor Splicing &amp; Maintenance</option>
+                                <option>TMM Brake Testing</option>
+                                <option>Supply Division</option>
+                                <option>Civil &amp; Construction</option>
+                                <option>Emergency Call‑Out</option>
+                                <option>Other / Multiple Services</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-gray-700 font-medium mb-1">Message <span class="text-red">*</span></label>
+                            <textarea rows="4" required class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-red-500"></textarea>
+                        </div>
+                        <button type="submit" class="btn-red text-white px-6 py-3 rounded font-semibold w-full transition">
+                            Send Message <i class="fas fa-paper-plane ml-2"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Emergency Call-Out Notice -->
+    <section class="bg-light py-12 text-center">
+        <div class="container mx-auto px-6">
+            <div class="bg-white p-6 rounded-lg shadow-md max-w-2xl mx-auto border-l-4 border-red-600">
+                <i class="fas fa-exclamation-triangle text-red text-3xl mb-2"></i>
+                <h3 class="text-xl font-bold text-dark">Emergency Call‑Outs Available 24/7</h3>
+                <p class="text-gray-700 mt-2">When your operations stop, we move. Call us anytime for urgent repairs or breakdowns.</p>
+                <a href="tel:0812474607" class="inline-block mt-4 bg-red-600 text-white px-6 py-2 rounded font-semibold hover:bg-red-700 transition">
+                    <i class="fas fa-phone-alt mr-2"></i> Call Now
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer with background image and logo -->
+    <footer class="footer-bg text-gray-300 py-12">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <img src="images/Thama Mining Solutions LOGO.jpeg" alt="Thama Mining Solutions" class="h-12 mb-4">
+                    <p>Mining services & engineering contractor.<br>B2B support for mines.</p>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="hover:text-gold">Home</a></li>
+                        <li><a href="about.html" class="hover:text-gold">About</a></li>
+                        <li><a href="services.html" class="hover:text-gold">Services</a></li>
+                        <li><a href="contact.html" class="hover:text-gold">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Contact</h4>
+                    <p class="flex items-center"><i class="fas fa-phone mr-2 w-5"></i> <a href="tel:0812474607" class="hover:text-gold">081 247 4607</a></p>
+                    <p class="flex items-center mt-2"><i class="fas fa-envelope mr-2 w-5"></i> <a href="mailto:thabom@thamaminingsolutions.com" class="hover:text-gold">thabom@thamaminingsolutions.com</a></p>
+                    <p class="flex items-center mt-2"><i class="fas fa-map-marker-alt mr-2 w-5"></i> 1348 Magongoa Village, Mokopane, 0601</p>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Emergency</h4>
+                    <p class="text-red font-bold">24/7 Call‑Out Available</p>
+                    <p class="mt-2">When your operations stop, we move.</p>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-6 text-center text-sm">
+                &copy; 2025 Thama Mining Solutions (Pty) Ltd. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp Button (still there) -->
+    <a href="https://wa.me/27123456789?text=Hello%2C%20I%20need%20mining%20support" class="floating-wa" target="_blank" rel="noopener noreferrer">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+</body>
+</html>

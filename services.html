@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services | Thama Mining Solutions</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome 6 (free) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        :root {
+            --color-dark: #1A1A1A;
+            --color-red: #C62828;
+            --color-gold: #D4A017;
+            --color-light: #F5F5F5;
+        }
+        body { font-family: 'Inter', system-ui, -apple-system, sans-serif; }
+        .bg-dark { background-color: var(--color-dark); }
+        .bg-light { background-color: var(--color-light); }
+        .text-red { color: var(--color-red); }
+        .text-gold { color: var(--color-gold); }
+        .btn-red {
+            background-color: var(--color-red);
+            transition: background-color 0.2s;
+        }
+        .btn-red:hover { background-color: #a82323; }
+        .floating-wa {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            z-index: 50;
+            background-color: #25D366;
+            border-radius: 50%;
+            width: 56px;
+            height: 56px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            transition: transform 0.2s;
+        }
+        .floating-wa:hover { transform: scale(1.05); }
+        .floating-wa i { font-size: 28px; color: white; }
+        /* Footer background */
+        .footer-bg {
+            background-image: url('https://images.unsplash.com/photo-1581092336388-4b3a25f5e95c?auto=format&fit=crop&q=80');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+        .footer-bg::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(26, 26, 26, 0.9);
+            z-index: 1;
+        }
+        .footer-bg > * {
+            position: relative;
+            z-index: 2;
+        }
+    </style>
+</head>
+<body class="bg-light text-dark font-sans antialiased">
+
+    <!-- Navbar (matching homepage with logo) -->
+    <nav class="bg-dark text-white py-4 px-6 md:px-12 flex justify-between items-center sticky top-0 z-40">
+        <div class="flex items-center">
+            <img src="images/Thama Mining Solutions LOGO.jpeg" alt="Thama Mining Solutions" class="h-12">
+        </div>
+        <div class="hidden md:flex space-x-8 font-medium">
+            <a href="index.html" class="hover:text-gold transition">Home</a>
+            <a href="about.html" class="hover:text-gold transition">About</a>
+            <a href="services.html" class="text-gold border-b-2 border-gold pb-1">Services</a>
+            <a href="contact.html" class="hover:text-gold transition">Contact</a>
+        </div>
+        <div class="md:hidden"><i class="fas fa-bars text-2xl"></i></div>
+        <a href="tel:0812474607" class="hidden md:inline-block bg-red-600 hover:bg-red-700 text-white px-5 py-2 rounded font-semibold transition">
+            <i class="fas fa-phone-alt mr-2"></i> Call Now
+        </a>
+    </nav>
+
+    <!-- Page Header (hero) -->
+    <header class="bg-dark text-white py-24 px-6 md:px-12 text-center border-b-4 border-red-600" style="background: linear-gradient(rgba(26,26,26,0.9), rgba(26,26,26,0.9)), url('https://images.unsplash.com/photo-1581094288338-2314dddb7ece?auto=format&fit=crop&q=80') center/cover;">
+        <h1 class="text-4xl md:text-6xl font-extrabold uppercase mb-4">Our Services</h1>
+        <p class="text-gray-300 max-w-2xl mx-auto text-lg">Comprehensive engineering, maintenance, and compliance solutions designed to eliminate downtime and keep your mine operational.</p>
+    </header>
+
+    <!-- Service: Pipe & Fluid Systems -->
+    <section class="py-20 px-6 md:px-12 bg-white">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <div>
+                <div class="flex items-center gap-4 mb-4">
+                    <i class="fa-solid fa-water text-3xl text-gold"></i>
+                    <h2 class="text-3xl font-bold uppercase">Pipe & Fluid Systems</h2>
+                </div>
+                <p class="text-gray-600 mb-6 leading-relaxed">Specialised pipeline infrastructure is critical for slurry, water, and chemical transfer in processing plants. We provide permanent, leak-proof joints and comprehensive maintenance to ensure continuous flow.</p>
+                <ul class="space-y-3 font-semibold text-sm">
+                    <li><i class="fa-solid fa-circle-chevron-right text-red mr-2"></i> HDPE Butt Welding</li>
+                    <li><i class="fa-solid fa-circle-chevron-right text-red mr-2"></i> Pipe & Valve Installations</li>
+                    <li><i class="fa-solid fa-circle-chevron-right text-red mr-2"></i> Long-term Maintenance Contracts</li>
+                </ul>
+            </div>
+            <div class="bg-gray-200 h-64 md:h-96 rounded border-l-4 border-dark flex items-center justify-center text-gray-400 overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1581094288338-2314dddb7ece?auto=format&fit=crop&q=80&w=800" alt="Pipe welding" class="w-full h-full object-cover">
+            </div>
+        </div>
+    </section>
+
+    <!-- Service: Conveyor Systems -->
+    <section class="py-20 px-6 md:px-12 bg-light border-y border-gray-200">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <div class="bg-gray-300 h-64 md:h-96 rounded border-l-4 border-red flex items-center justify-center text-gray-500 order-2 md:order-1 overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1581091226033-d5c48150dbaa?auto=format&fit=crop&q=80&w=800" alt="Conveyor belt" class="w-full h-full object-cover">
+            </div>
+            <div class="order-1 md:order-2">
+                <div class="flex items-center gap-4 mb-4">
+                    <i class="fa-solid fa-gears text-3xl text-gold"></i>
+                    <h2 class="text-3xl font-bold uppercase">Conveyor Systems</h2>
+                </div>
+                <p class="text-gray-600 mb-6 leading-relaxed">Conveyors are the lifeline of your production. A stopped belt means a stopped mine. Our rapid-response splicing and maintenance teams are built to respond fast and restore operations.</p>
+                <ul class="space-y-3 font-semibold text-sm">
+                    <li><i class="fa-solid fa-circle-chevron-right text-red mr-2"></i> Hot & Cold Belt Splicing</li>
+                    <li><i class="fa-solid fa-circle-chevron-right text-red mr-2"></i> Idlers & Pulley Supply and Installation</li>
+                    <li><i class="fa-solid fa-circle-chevron-right text-red mr-2"></i> Conveyor Belt & Plant Cleaning</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Service: Mining Equipment Services -->
+    <section class="py-20 px-6 md:px-12 bg-white">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <div>
+                <div class="flex items-center gap-4 mb-4">
+                    <i class="fa-solid fa-truck-fast text-3xl text-gold"></i>
+                    <h2 class="text-3xl font-bold uppercase">Mining Equipment Services</h2>
+                </div>
+                <p class="text-gray-600 mb-6 leading-relaxed">Compliance is non-negotiable. We offer legally required testing and dedicated workshop support to ensure your trackless mobile machinery meets all South African Mine Health & Safety Act regulations.</p>
+                <ul class="space-y-3 font-semibold text-sm">
+                    <li><i class="fa-solid fa-circle-chevron-right text-red mr-2"></i> MHSA-Compliant TMM Brake Testing</li>
+                    <li><i class="fa-solid fa-circle-chevron-right text-red mr-2"></i> Heavy Machinery Workshop Services</li>
+                    <li><i class="fa-solid fa-circle-chevron-right text-red mr-2"></i> Processing Plant Support</li>
+                </ul>
+            </div>
+            <div class="bg-gray-200 h-64 md:h-96 rounded border-l-4 border-gold flex items-center justify-center text-gray-400 overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1581092335698-d27d5a5ce02c?auto=format&fit=crop&q=80&w=800" alt="Mining truck" class="w-full h-full object-cover">
+            </div>
+        </div>
+    </section>
+
+    <!-- Supply Division & Construction & Civil (two cards side by side) -->
+    <section class="py-20 px-6 md:px-12 bg-dark text-white">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12">
+            <div class="border border-gray-700 p-8 rounded hover:border-red transition">
+                <i class="fa-solid fa-toolbox text-3xl text-gold mb-4"></i>
+                <h3 class="text-2xl font-bold uppercase mb-4">Supply Division</h3>
+                <p class="text-gray-400">Reliable procurement for critical operations. We supply mining tools, specialized engineering consumables, and equipment directly to your site, ensuring your teams never stop working due to a lack of gear.</p>
+            </div>
+            <div class="border border-gray-700 p-8 rounded hover:border-gold transition">
+                <i class="fa-solid fa-helmet-safety text-3xl text-gold mb-4"></i>
+                <h3 class="text-2xl font-bold uppercase mb-4">Construction & Civil</h3>
+                <p class="text-gray-400">Beyond mechanical support, we handle the on-site minor construction works and civil engineering support required to keep surface infrastructure and access points in peak condition.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="bg-dark text-white py-16 text-center">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold">Need a Service?</h2>
+            <p class="text-xl text-gray-200 mt-4">Contact us for a quote or emergency support.</p>
+            <div class="mt-8 flex flex-col sm:flex-row justify-center gap-4">
+                <a href="contact.html" class="btn-red text-white px-8 py-3 rounded font-semibold text-lg inline-flex items-center justify-center">
+                    <i class="fas fa-file-alt mr-2"></i> Get a Quote
+                </a>
+                <a href="tel:0812474607" class="border-2 border-white hover:border-gold text-white px-8 py-3 rounded font-semibold text-lg inline-flex items-center justify-center transition">
+                    <i class="fas fa-phone-alt mr-2"></i> Emergency Call‑Out
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer (matching homepage with background image) -->
+    <footer class="footer-bg text-gray-300 py-12">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <img src="images/Thama Mining Solutions LOGO.jpeg" alt="Thama Mining Solutions" class="h-12 mb-4">
+                    <p>Mining services & engineering contractor.<br>B2B support for mines.</p>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="hover:text-gold">Home</a></li>
+                        <li><a href="about.html" class="hover:text-gold">About</a></li>
+                        <li><a href="services.html" class="hover:text-gold">Services</a></li>
+                        <li><a href="contact.html" class="hover:text-gold">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Contact</h4>
+                    <p class="flex items-center"><i class="fas fa-phone mr-2 w-5"></i> <a href="tel:0812474607" class="hover:text-gold">081 247 4607</a></p>
+                    <p class="flex items-center mt-2"><i class="fas fa-envelope mr-2 w-5"></i> <a href="mailto:thabom@thamaminingsolutions.com" class="hover:text-gold">thabom@thamaminingsolutions.com</a></p>
+                    <p class="flex items-center mt-2"><i class="fas fa-map-marker-alt mr-2 w-5"></i> 1348 Magongoa Village, Mokopane, 0601</p>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Emergency</h4>
+                    <p class="text-red font-bold">24/7 Call‑Out Available</p>
+                    <p class="mt-2">When your operations stop, we move.</p>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-6 text-center text-sm">
+                &copy; 2025 Thama Mining Solutions (Pty) Ltd. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/27123456789?text=Hello%2C%20I%20need%20mining%20support" class="floating-wa" target="_blank" rel="noopener noreferrer">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+</body>
+</html>
