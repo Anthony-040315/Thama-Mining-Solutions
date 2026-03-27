@@ -4,9 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Thama Mining Solutions | Mining & Engineering Contractor</title>
-    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Font Awesome 6 (free) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         :root {
@@ -20,65 +18,65 @@
         .bg-light { background-color: var(--color-light); }
         .text-red { color: var(--color-red); }
         .text-gold { color: var(--color-gold); }
-        .btn-red {
-            background-color: var(--color-red);
-            transition: background-color 0.2s;
-        }
+        .btn-red { background-color: var(--color-red); transition: background-color 0.2s; }
         .btn-red:hover { background-color: #a82323; }
-        .btn-outline-red {
-            border: 2px solid var(--color-red);
-            color: var(--color-red);
-            transition: all 0.2s;
-        }
-        .btn-outline-red:hover {
-            background-color: var(--color-red);
-            color: white;
-        }
         .floating-wa {
-            position: fixed;
-            bottom: 24px;
-            right: 24px;
-            z-index: 50;
-            background-color: #25D366;
-            border-radius: 50%;
-            width: 56px;
-            height: 56px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-            transition: transform 0.2s;
+            position: fixed; bottom: 24px; right: 24px; z-index: 50;
+            background-color: #25D366; border-radius: 50%; width: 56px; height: 56px;
+            display: flex; align-items: center; justify-content: center;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15); transition: transform 0.2s;
         }
         .floating-wa:hover { transform: scale(1.05); }
         .floating-wa i { font-size: 28px; color: white; }
-        .hero-overlay {
-            background: linear-gradient(0deg, rgba(0,0,0,0.7), rgba(0,0,0,0.5));
-        }
+        .hero-overlay { background: linear-gradient(0deg, rgba(0,0,0,0.7), rgba(0,0,0,0.5)); }
     </style>
 </head>
 <body class="antialiased">
 
     <!-- Navbar -->
-    <nav class="bg-dark text-white py-4 px-6 md:px-12 flex justify-between items-center sticky top-0 z-40">
-        <div class="flex items-center space-x-2">
-            <div class="w-10 h-10 bg-gold rounded flex items-center justify-center text-black font-bold">TM</div>
-            <span class="text-xl font-bold tracking-tight">Thama Mining Solutions</span>
+    <!-- Navbar with container for logo and working mobile menu -->
+    <nav class="bg-dark text-white py-4 px-6 md:px-12 sticky top-0 z-40">
+        <div class="flex justify-between items-center">
+            <!-- Logo container for better visibility -->
+            <div class="flex items-center">
+                <div class="h-15 w-auto bg-dark rounded flex items-center justify-center">
+                    <img src="images/TMS_LOGO.jpeg" alt="Thama Mining Solutions" class="h-12 w-auto object-contain"
+                         onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\'w-10 h-10 rounded flex items-center justify-center text-black font-bold bg-yellow-500\' style=\'background-color:#D4A017\'>TM</div>'">
+                </div>
+            </div>
+            <!-- Desktop Navigation -->
+            <div class="hidden md:flex space-x-8 font-medium">
+                <a href="index.html" class="hover:text-gold transition">Home</a>
+                <a href="about.html" class="hover:text-gold transition">About</a>
+                <a href="services.html" class="hover:text-gold transition">Services</a>
+                <a href="contact.html" class="text-gold border-b-2 border-gold pb-1">Contact</a>
+            </div>
+            <!-- Mobile hamburger button -->
+            <div class="md:hidden">
+                <button id="menu-btn" class="focus:outline-none">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+            <!-- Call button desktop -->
+            <a href="tel:0812474607" class="hidden md:inline-block bg-red-600 hover:bg-red-700 text-white px-5 py-2 rounded font-semibold transition">
+                <i class="fas fa-phone-alt mr-2"></i> Call Now
+            </a>
         </div>
-        <div class="hidden md:flex space-x-8 font-medium">
-            <a href="index.html" class="hover:text-gold transition">Home</a>
-            <a href="about.html" class="hover:text-gold transition">About</a>
-            <a href="services.html" class="hover:text-gold transition">Services</a>
-            <a href="contact.html" class="hover:text-gold transition">Contact</a>
+        <!-- Mobile menu (hidden by default) -->
+        <div id="mobile-menu" class="hidden md:hidden mt-4 pt-4 border-t border-gray-700">
+            <a href="index.html" class="block py-2 hover:text-gold transition">Home</a>
+            <a href="about.html" class="block py-2 hover:text-gold transition">About</a>
+            <a href="services.html" class="block py-2 hover:text-gold transition">Services</a>
+            <a href="contact.html" class="block py-2 text-gold transition">Contact</a>
+            <a href="tel:0812474607" class="block mt-2 bg-red-600 text-white text-center px-4 py-2 rounded font-semibold transition">
+                <i class="fas fa-phone-alt mr-2"></i> Call Now
+            </a>
         </div>
-        <div class="md:hidden"><i class="fas fa-bars text-2xl"></i></div>
-        <a href="tel:0812474607" class="hidden md:inline-block bg-red-600 hover:bg-red-700 text-white px-5 py-2 rounded font-semibold transition">
-            <i class="fas fa-phone-alt mr-2"></i> Call Now
-        </a>
     </nav>
 
     <!-- Hero Section -->
     <section class="relative bg-dark text-white">
-        <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('https://placehold.co/1920x800/1A1A1A/white?text=Mining+Site');"></div>
+        <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('images/hero.jpg');"></div>
         <div class="absolute inset-0 hero-overlay"></div>
         <div class="relative container mx-auto px-6 py-24 md:py-32 text-center md:text-left">
             <div class="max-w-3xl mx-auto md:mx-0">
@@ -112,7 +110,6 @@
                 <div class="w-20 h-1 bg-gold mx-auto mt-4"></div>
                 <p class="text-gray-600 mt-4 max-w-2xl mx-auto">Comprehensive mining infrastructure support—from pipelines to conveyors—engineered for safety, quality, and operational reliability.</p>
             </div>
-            </div>
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <div class="bg-light p-6 rounded-lg shadow-md hover:shadow-lg transition">
                     <i class="fas fa-water text-gold text-4xl mb-4"></i>
@@ -143,13 +140,28 @@
         </div>
     </section>
 
-    <!-- About Preview -->
+     <!-- About Preview with Slideshow -->
     <section class="bg-light py-16">
         <div class="container mx-auto px-6">
             <div class="flex flex-col md:flex-row items-center gap-12">
-                <div class="md:w-1/2">
-                    <img src="https://placehold.co/600x400/1A1A1A/white?text=Team+on+Site" alt="Thama team at work" class="rounded-lg shadow-lg">
+                <!-- Slideshow Container (left side) -->
+                <div class="md:w-1/2 relative">
+                    <div class="relative rounded-lg shadow-lg overflow-hidden h-80">
+                        <div id="slideshow-images" class="relative w-full h-full">
+                            <img src="images/company truck_1.webp" alt="Thama team at work" class="slide-img absolute inset-0 w-full h-full object-cover opacity-100 transition-opacity duration-500">
+                            <img src="images/company truck_2.webp" alt="Thama team at work" class="slide-img absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-500">
+                            <img src="images/company truck_3.webp" alt="Thama team at work" class="slide-img absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-500">
+                        </div>
+                        <!-- Dots navigation -->
+                        <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2 z-10">
+                            <button class="dot w-3 h-3 rounded-full bg-white bg-opacity-50 hover:bg-opacity-100 transition-all" data-index="0"></button>
+                            <button class="dot w-3 h-3 rounded-full bg-white bg-opacity-50 hover:bg-opacity-100 transition-all" data-index="1"></button>
+                            <button class="dot w-3 h-3 rounded-full bg-white bg-opacity-50 hover:bg-opacity-100 transition-all" data-index="2"></button>
+                        </div>
+                    </div>
                 </div>
+
+                <!-- Right side text (unchanged) -->
                 <div class="md:w-1/2">
                     <h2 class="text-3xl font-bold text-dark">Reliable Mining Support, On‑Site & On Time</h2>
                     <div class="w-16 h-1 bg-gold my-4"></div>
@@ -163,32 +175,86 @@
         </div>
     </section>
 
- <!-- Our Clients Section (logos of local/industry companies) -->
+    <script>
+        // Slideshow functionality
+        const slides = document.querySelectorAll('.slide-img');
+        const dots = document.querySelectorAll('.dot');
+        let currentIndex = 0;
+        let interval;
+
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.classList.toggle('opacity-100', i === index);
+                slide.classList.toggle('opacity-0', i !== index);
+            });
+            dots.forEach((dot, i) => {
+                dot.classList.toggle('bg-white', i === index);
+                dot.classList.toggle('bg-opacity-50', i !== index);
+                dot.classList.toggle('bg-opacity-100', i === index);
+            });
+            currentIndex = index;
+        }
+
+        function nextSlide() {
+            let next = (currentIndex + 1) % slides.length;
+            showSlide(next);
+        }
+
+        function startAutoPlay() {
+            interval = setInterval(nextSlide, 4000);
+        }
+
+        function stopAutoPlay() {
+            clearInterval(interval);
+        }
+
+        // Dot click handlers
+        dots.forEach(dot => {
+            dot.addEventListener('click', function() {
+                const index = parseInt(this.getAttribute('data-index'));
+                stopAutoPlay();
+                showSlide(index);
+                startAutoPlay();
+            });
+        });
+
+        // Start auto play
+        startAutoPlay();
+
+        // Optional: pause on hover
+        const container = document.querySelector('#slideshow-images').parentElement;
+        container.addEventListener('mouseenter', stopAutoPlay);
+        container.addEventListener('mouseleave', startAutoPlay);
+    </script>
+
+       <!-- Our Clients -->
     <section class="bg-light py-16">
         <div class="container mx-auto px-6 text-center">
-            <h2 class="text-3xl font-bold text-dark">Our Clients</h2>
+            <h2 class="text-3xl font-bold text-dark">Clients We’ve Worked With</h2>
             <div class="w-20 h-1 bg-gold mx-auto mt-4 mb-12"></div>
-            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8 items-center">
-                <!-- Placeholder logos – replace with actual images -->
-                <div class="bg-white p-4 rounded shadow flex items-center justify-center">
-                    <span class="text-gray-500 font-semibold">Anglo American</span>
+            <div class="flex flex-wrap justify-center items-center gap-6">
+                <!-- IvanPlats logo -->
+                <div class="bg-white p-3 rounded shadow w-40 h-24 flex items-center justify-center">
+                    <img src="images/IvanPlats logo.png" alt="Ivanplats Mine" class="max-h-16 max-w-full object-contain">
                 </div>
-                <div class="bg-white p-4 rounded shadow flex items-center justify-center">
-                    <span class="text-gray-500 font-semibold">Ivanhoe Mines</span>
+                <!-- PK Consulting logo -->
+                <div class="bg-white p-3 rounded shadow w-40 h-24 flex items-center justify-center">
+                    <img src="images/pk-and-son-logo-removebg-preview.webp" alt="PK Consulting" class="max-h-16 max-w-full object-contain">
                 </div>
-                <div class="bg-white p-4 rounded shadow flex items-center justify-center">
-                    <span class="text-gray-500 font-semibold">Exxaro</span>
+                <!-- Ditiro Properties (text fallback) -->
+                <div class="bg-white p-3 rounded shadow w-40 h-24 flex items-center justify-center">
+                    <span class="text-gray-700 font-semibold text-center">Ditiro Properties</span>
                 </div>
-                <div class="bg-white p-4 rounded shadow flex items-center justify-center">
-                    <span class="text-gray-500 font-semibold">South32</span>
+                <!-- Mogalakwena logo -->
+                <div class="bg-white p-3 rounded shadow w-40 h-24 flex items-center justify-center">
+                    <img src="images/Mogalakwena logo.png" alt="Mogalakwena Local Municipality" class="max-h-16 max-w-full object-contain">
                 </div>
-                <div class="bg-white p-4 rounded shadow flex items-center justify-center">
-                    <span class="text-gray-500 font-semibold">Sibanye-Stillwater</span>
-                </div>
-                <div class="bg-white p-4 rounded shadow flex items-center justify-center">
-                    <span class="text-gray-500 font-semibold">Glencore</span>
+                <!-- Redpath Mining logo -->
+                <div class="bg-white p-3 rounded shadow w-40 h-24 flex items-center justify-center">
+                    <img src="images/Redpath Mining.png" alt="Redpath Mining" class="max-h-16 max-w-full object-contain">
                 </div>
             </div>
+            <p class="text-gray-600 mt-8 max-w-2xl mx-auto">Trusted by leading mining operators and local authorities across Limpopo.</p>
         </div>
     </section>
 
@@ -200,17 +266,17 @@
                 <div class="w-20 h-1 bg-gold mx-auto mt-4"></div>
             </div>
             <div class="grid md:grid-cols-3 gap-8">
-                <div class="text-center p-6">
+                <div class="text-center p-6 bg-white rounded-lg shadow hover:shadow-lg transition">
                     <i class="fas fa-bolt text-red text-4xl mb-4"></i>
                     <h3 class="text-xl font-bold">Fast Emergency Response</h3>
                     <p class="text-gray-600 mt-2">Every minute of downtime has a cost. We respond quickly to minimise production loss.</p>
                 </div>
-                <div class="text-center p-6">
+                <div class="text-center p-6 bg-white rounded-lg shadow hover:shadow-lg transition"> 
                     <i class="fas fa-clipboard-list text-red text-4xl mb-4"></i>
                     <h3 class="text-xl font-bold">MHSA Compliance</h3>
                     <p class="text-gray-600 mt-2">Our TMM brake testing ensures legal compliance, reducing liability for mine operators.</p>
                 </div>
-               <div class="text-center p-6 bg-light rounded-lg shadow hover:shadow-lg transition">
+                <div class="text-center p-6 bg-white rounded-lg shadow hover:shadow-lg transition">
                     <i class="fas fa-tools text-red text-4xl mb-4"></i>
                     <h3 class="text-xl font-bold">Technical Excellence</h3>
                     <p class="text-gray-600 mt-2">From large-scale HDPE pipeline installations to conveyor splicing, we provide the technical heavy lifting that keeps your infrastructure resilient.</p>
@@ -219,14 +285,13 @@
         </div>
     </section>
 
-   
-
-     <!-- Final CTA (single button, background image) -->
-    <section class="relative bg-dark text-white py-20" style="background-image: url('images/Heavy equipment.jpeg'); background-size: cover; background-position: center;">
+    <!-- Final CTA -->
+    <section class="relative bg-dark text-white py-20">
+        <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('images/Heavy equipment.jpeg');"></div>
         <div class="absolute inset-0 bg-black bg-opacity-70"></div>
         <div class="relative container mx-auto px-6 text-center">
             <h2 class="text-3xl md:text-4xl font-bold">Ready to Keep Your Operation Running?</h2>
-            <p class="text-xl text-gray-200 mt-4 max-w-2xl mx-auto">Let’s discuss how Thama Mining Solutions can support your next project.</p>
+            <p class="text-xl text-gray-200 mt-4 max-w-2xl mx-auto">Let's discuss how Thama Mining Solutions can support your next project.</p>
             <div class="mt-8">
                 <a href="contact.html" class="btn-red text-white px-8 py-3 rounded font-semibold text-lg inline-flex items-center justify-center">
                     <i class="fas fa-envelope mr-2"></i> Get in touch
@@ -240,7 +305,7 @@
         <div class="container mx-auto px-6">
             <div class="grid md:grid-cols-4 gap-8">
                 <div>
-                    <h3 class="text-white text-lg font-bold mb-4">Thama Mining Solutions</h3>
+                    <img src="images/TMS_LOGO.jpeg" alt="Thama Mining Solutions" class="h-12 mb-4" onerror="this.style.display='none'">
                     <p>Mining services & engineering contractor.<br>B2B support for mines.</p>
                 </div>
                 <div>
@@ -255,12 +320,12 @@
                 <div>
                     <h4 class="text-white font-semibold mb-4">Contact</h4>
                     <p><i class="fas fa-phone mr-2"></i> <a href="tel:0812474607" class="hover:text-gold">081 247 4607</a></p>
-                    <p><i class="fas fa-envelope mr-2"></i> <a href="mailto:thabom@thamaminingsolutions.com" class="hover:text-gold">thabom@thamaminingsolutions.com</a></p>
-                    <p><i class="fas fa-map-marker-alt mr-2"></i> 1348 Magongoa Village, Mokopane, 0601</p>
+                    <p class="mt-1"><i class="fas fa-envelope mr-2"></i> <a href="mailto:thabom@thamaminingsolutions.com" class="hover:text-gold">thabom@thamaminingsolutions.com</a></p>
+                    <p class="mt-1"><i class="fas fa-map-marker-alt mr-2"></i> 1348 Magongoa Village, Mokopane, 0601</p>
                 </div>
                 <div>
                     <h4 class="text-white font-semibold mb-4">Emergency</h4>
-                    <p class="text-red font-bold">24/7 Call‑Out Available</p>
+                    <p class="text-red-500 font-bold">24/7 Call‑Out Available</p>
                     <p class="mt-2">When your operations stop, we move.</p>
                 </div>
             </div>
@@ -270,8 +335,7 @@
         </div>
     </footer>
 
-    <!-- Floating WhatsApp Button -->
-    <a href="https://wa.me/083031014?text=Hello%2C%20I%20need%20mining%20support" class="floating-wa" target="_blank" rel="noopener noreferrer">
+    <a href="https://wa.me/27812474607?text=Hello%2C%20I%20need%20mining%20support" class="floating-wa" target="_blank" rel="noopener noreferrer">
         <i class="fab fa-whatsapp"></i>
     </a>
 </body>
