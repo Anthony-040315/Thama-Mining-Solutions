@@ -64,8 +64,8 @@
         </div>
     </nav>
 
-    <!-- Hero (single background, no duplicate) -->
-    <header class="relative bg-dark text-white py-24 px-6 md:px-12 text-center bg-cover bg-center" style="background-image: url('images/server_banner.jpg'); background-blend-mode: overlay; background-color: rgba(0,0,0,0.6);">
+    <!-- Hero (single background, no duplication) -->
+    <header class="relative bg-dark text-white py-24 px-6 md:px-12 text-center bg-cover bg-center" style="background-image: url('images/server_banner.jpg'); background-blend-mode: overlay; background-color: rgba(0,0,0,0.6); background-size: cover; background-position: center;">
         <div class="absolute inset-0 bg-black bg-opacity-50"></div>
         <div class="relative container mx-auto">
             <h1 class="text-4xl md:text-5xl font-bold mb-4">Our Services</h1>
@@ -127,7 +127,7 @@
         </div>
     </section>
 
-    <!-- Mining Equipment Services (fixed image) -->
+    <!-- Mining Equipment Services (fixed image – no zoom) -->
     <section class="py-16 px-6 md:px-12 bg-white">
         <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div>
@@ -142,7 +142,9 @@
                     <li><i class="fa-solid fa-circle-chevron-right text-red mr-2"></i> Processing Plant Support</li>
                 </ul>
             </div>
-            <div class="border-l-4 border-gold rounded-lg overflow-hidden h-64 md:h-96"><img src="images/company trucks.jpg" alt="Mining truck" class="w-full h-full object-cover"></div>
+            <div class="border-l-4 border-gold rounded-lg overflow-hidden h-64 md:h-96 flex items-center justify-center bg-gray-100">
+                <img src="images/company trucks.jpg" alt="Mining truck" class="w-full h-full object-contain">
+            </div>
         </div>
     </section>
 
@@ -184,52 +186,52 @@
         </div>
     </section>
 
-<!-- Footer -->
-<footer class="bg-dark text-gray-300 py-12">
-    <div class="container mx-auto px-6">
-        <div class="grid md:grid-cols-4 gap-8">
-            <div>
-                <img src="images/TMS_LOGO.jpeg" alt="Thama Mining Solutions" class="h-[6rem] mb-4 w-auto" onerror="this.style.display='none'">
-                <p>Mining services & engineering contractor.<br>B2B support for mines.</p>
-            </div>
-            <div>
-                <h4 class="text-white font-semibold mb-4">Quick Links</h4>
-                <ul class="space-y-2">
-                    <li><a href="index.html" class="hover:text-gold">Home</a></li>
-                    <li><a href="about.html" class="hover:text-gold">About</a></li>
-                    <li><a href="services.html" class="hover:text-gold">Services</a></li>
-                    <li><a href="contact.html" class="hover:text-gold">Contact</a></li>
-                </ul>
-            </div>
-            <div>
-                <h4 class="text-white font-semibold mb-4">Contact</h4>
-                <div class="space-y-3">
-                    <div class="flex items-center">
-                        <i class="fas fa-phone w-5 mr-2"></i>
-                        <a href="tel:0812474607" class="hover:text-gold">081 247 4607</a>
-                    </div>
-                    <div class="flex items-center">
-                        <i class="fas fa-envelope w-5 mr-2"></i>
-                        <a href="mailto:thabom@thamaminingsolutions.com" class="hover:text-gold">thabom@thamaminingsolutions.com</a>
-                    </div>
-                    <div class="flex items-start">
-                        <i class="fas fa-map-marker-alt w-5 mr-2 mt-0.5"></i>
-                        <span>1348 Magongoa Village, Mokopane, 0601</span>
+    <!-- Footer -->
+    <footer class="bg-dark text-gray-300 py-12">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <img src="images/TMS_LOGO.jpeg" alt="Thama Mining Solutions" class="h-[6rem] mb-4 w-auto" onerror="this.style.display='none'">
+                    <p>Mining services & engineering contractor.<br>B2B support for mines.</p>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="hover:text-gold">Home</a></li>
+                        <li><a href="about.html" class="hover:text-gold">About</a></li>
+                        <li><a href="services.html" class="hover:text-gold">Services</a></li>
+                        <li><a href="contact.html" class="hover:text-gold">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Contact</h4>
+                    <div class="space-y-3">
+                        <div class="flex items-center">
+                            <i class="fas fa-phone w-5 mr-2"></i>
+                            <a href="tel:0812474607" class="hover:text-gold">081 247 4607</a>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-envelope w-5 mr-2"></i>
+                            <a href="mailto:thabom@thamaminingsolutions.com" class="hover:text-gold">thabom@thamaminingsolutions.com</a>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-map-marker-alt w-5 mr-2 mt-0.5"></i>
+                            <span>1348 Magongoa Village, Mokopane, 0601</span>
+                        </div>
                     </div>
                 </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Emergency</h4>
+                    <p class="text-red-500 font-bold">24/7 Call‑Out Available</p>
+                    <p class="mt-2">When your operations stop, we move.</p>
+                </div>
             </div>
-            <div>
-                <h4 class="text-white font-semibold mb-4">Emergency</h4>
-                <p class="text-red-500 font-bold">24/7 Call‑Out Available</p>
-                <p class="mt-2">When your operations stop, we move.</p>
+            <div class="border-t border-gray-700 mt-8 pt-6 text-center text-sm">
+                &copy; 2025 Thama Mining Solutions (Pty) Ltd. All rights reserved.<br>
+                Designed by <a href="https://precisiondesignsagency.com/" target="_blank" class="text-gold hover:underline">Precision Designs Agency</a>
             </div>
         </div>
-        <div class="border-t border-gray-700 mt-8 pt-6 text-center text-sm">
-            &copy; 2025 Thama Mining Solutions (Pty) Ltd. All rights reserved.<br>
-            Designed by <a href="https://precisiondesignsagency.com/" target="_blank" class="text-gold hover:underline">Precision Designs Agency</a>
-        </div>
-    </div>
-</footer>
+    </footer>
 
     <a href="https://wa.me/27812474607?text=Hello%2C%20I%20need%20mining%20support" class="floating-wa" target="_blank"><i class="fab fa-whatsapp"></i></a>
 
