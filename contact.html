@@ -13,7 +13,6 @@
             --color-gold: #D4A017;
             --color-light: #F5F5F5;
         }
-        body { font-family: 'Inter', system-ui, -apple-system, sans-serif; }
         .bg-dark { background-color: var(--color-dark); }
         .bg-light { background-color: var(--color-light); }
         .text-red { color: var(--color-red); }
@@ -28,45 +27,31 @@
         }
         .floating-wa:hover { transform: scale(1.05); }
         .floating-wa i { font-size: 28px; color: white; }
-        /* Custom focus ring for dropdown (gold) */
-        .focus-gold:focus {
-            outline: none;
-            ring: 2px solid var(--color-gold);
-            ring-offset: 2px;
-        }
     </style>
 </head>
-<body class="bg-light text-dark font-sans antialiased">
+<body class="bg-light font-sans antialiased">
 
-    <!-- Navbar with container for logo and working mobile menu -->
+    <!-- Navbar (same) -->
     <nav class="bg-dark text-white py-4 px-6 md:px-12 sticky top-0 z-40">
         <div class="flex justify-between items-center">
-            <!-- Logo container for better visibility -->
             <div class="flex items-center">
-                <div class="h-15 w-auto bg-dark rounded flex items-center justify-center">
-                    <img src="images/TMS_LOGO.jpeg" alt="Thama Mining Solutions" class="h-12 w-auto object-contain"
-                         onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\'w-10 h-10 rounded flex items-center justify-center text-black font-bold bg-yellow-500\' style=\'background-color:#D4A017\'>TM</div>'">
+                <div class="bg-white p-1 rounded shadow-md">
+                    <img src="images/TMS_LOGO.jpeg" alt="Thama Mining Solutions" class="h-[4rem] w-auto object-contain">
                 </div>
             </div>
-            <!-- Desktop Navigation -->
             <div class="hidden md:flex space-x-8 font-medium">
                 <a href="index.html" class="hover:text-gold transition">Home</a>
                 <a href="about.html" class="hover:text-gold transition">About</a>
                 <a href="services.html" class="hover:text-gold transition">Services</a>
                 <a href="contact.html" class="text-gold border-b-2 border-gold pb-1">Contact</a>
             </div>
-            <!-- Mobile hamburger button -->
             <div class="md:hidden">
-                <button id="menu-btn" class="focus:outline-none">
-                    <i class="fas fa-bars text-2xl"></i>
-                </button>
+                <button id="menu-btn" class="focus:outline-none"><i class="fas fa-bars text-2xl"></i></button>
             </div>
-            <!-- Call button desktop -->
             <a href="tel:0812474607" class="hidden md:inline-block bg-red-600 hover:bg-red-700 text-white px-5 py-2 rounded font-semibold transition">
                 <i class="fas fa-phone-alt mr-2"></i> Call Now
             </a>
         </div>
-        <!-- Mobile menu (hidden by default) -->
         <div id="mobile-menu" class="hidden md:hidden mt-4 pt-4 border-t border-gray-700">
             <a href="index.html" class="block py-2 hover:text-gold transition">Home</a>
             <a href="about.html" class="block py-2 hover:text-gold transition">About</a>
@@ -78,7 +63,7 @@
         </div>
     </nav>
 
-    <!-- Page Title (background image without increasing section size) -->
+    <!-- Hero -->
     <section class="relative bg-dark text-white py-20 bg-cover bg-center" style="background-image: url('images/contact_banner.jpg'); background-blend-mode: overlay; background-color: rgba(0,0,0,0.6);">
         <div class="absolute inset-0 bg-black bg-opacity-50"></div>
         <div class="relative container mx-auto px-6 text-center">
@@ -88,155 +73,188 @@
         </div>
     </section>
 
-    <!-- Contact Info & Form with reorder on mobile -->
+    <!-- Desktop: two columns, mobile: stacked as per order -->
     <section class="bg-white py-16">
         <div class="container mx-auto px-6">
-            <div class="grid md:grid-cols-2 gap-12">
-                <!-- Left: Contact details (will appear second on mobile) -->
-                <div class="order-2 md:order-1">
+            <!-- Mobile layout (order used) -->
+            <div class="md:hidden space-y-12">
+                <!-- Get in Touch -->
+                <div>
                     <h2 class="text-2xl font-bold text-dark">Get in <span class="text-gold">Touch</span></h2>
                     <div class="w-12 h-1 bg-gold my-4"></div>
                     <div class="space-y-6">
                         <div class="flex items-start gap-4">
                             <i class="fas fa-phone-alt text-red text-2xl mt-1"></i>
-                            <div>
-                                <h3 class="font-semibold">Phone</h3>
-                                <p><a href="tel:0812474607" class="hover:text-red">081 247 4607</a></p>
-                                <p class="text-sm text-gray-500">Available 6am–5pm Mon–Fri, 7am–3pm Sat</p>
-                            </div>
+                            <div><h3 class="font-semibold">Phone</h3><p><a href="tel:0812474607" class="hover:text-red">081 247 4607</a></p><p class="text-sm text-gray-500">Available 6am–5pm Mon–Fri, 7am–3pm Sat</p></div>
                         </div>
                         <div class="flex items-start gap-4">
                             <i class="fas fa-envelope text-red text-2xl mt-1"></i>
-                            <div>
-                                <h3 class="font-semibold">Email</h3>
-                                <p><a href="mailto:thabom@thamaminingsolutions.com" class="hover:text-red">thabom@thamaminingsolutions.com</a></p>
-                            </div>
+                            <div><h3 class="font-semibold">Email</h3><p><a href="mailto:thabom@thamaminingsolutions.com" class="hover:text-red">thabom@thamaminingsolutions.com</a></p></div>
                         </div>
                         <div class="flex items-start gap-4">
                             <i class="fas fa-map-marker-alt text-red text-2xl mt-1"></i>
-                            <div>
-                                <h3 class="font-semibold">Address</h3>
-                                <p>1348 Magongoa Village, Mokopane, 0601, South Africa</p>
-                            </div>
+                            <div><h3 class="font-semibold">Address</h3><p>1348 Magongoa Village, Mokopane, 0601, South Africa</p></div>
                         </div>
-                    </div>
-                    <!-- Map moved here; will appear after form on mobile (order) -->
-                    <div class="mt-8 h-64 bg-light rounded-lg overflow-hidden shadow">
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14414.117857732442!2d29.044322!3d-24.185964!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1ec099fd47dfc4df%3A0xab9a0c5dddb7a3b0!2sMokopane%2C%200600!5e0!3m2!1sen!2sza!4v1691768285123!5m2!1sen!2sza" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
                     </div>
                 </div>
 
-                <!-- Right: Request a Quote Form (appears first on mobile) -->
-                <div class="order-1 md:order-2">
+                <!-- Request a Quote -->
+                <div>
                     <h2 class="text-2xl font-bold text-dark">Request a Quote</h2>
                     <div class="w-12 h-1 bg-gold my-4"></div>
                     <form action="#" method="POST" class="space-y-4">
-                        <div>
-                            <label class="block text-gray-700 font-medium mb-1">Name <span class="text-red">*</span></label>
-                            <input type="text" required class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-transparent">
-                        </div>
-                        <div>
-                            <label class="block text-gray-700 font-medium mb-1">Company <span class="text-gray-400 text-sm">(optional)</span></label>
-                            <input type="text" class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-transparent">
-                        </div>
-                        <div>
-                            <label class="block text-gray-700 font-medium mb-1">Email <span class="text-red">*</span></label>
-                            <input type="email" required class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-transparent">
-                        </div>
-                        <div>
-                            <label class="block text-gray-700 font-medium mb-1">Phone <span class="text-red">*</span></label>
-                            <input type="tel" required class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-transparent">
-                        </div>
-                        <div>
-                            <label class="block text-gray-700 font-medium mb-1">Service Required</label>
-                            <select class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-transparent bg-white">
-                                <option value="">-- Select a service --</option>
-                                <option>Pipe &amp; Fluid Systems (HDPE Welding)</option>
-                                <option>Conveyor Splicing &amp; Maintenance</option>
+                        <div><label class="block text-gray-700 font-medium mb-1">Name <span class="text-red">*</span></label><input type="text" required class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-yellow-500"></div>
+                        <div><label class="block text-gray-700 font-medium mb-1">Company <span class="text-gray-400 text-sm">(optional)</span></label><input type="text" class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-yellow-500"></div>
+                        <div><label class="block text-gray-700 font-medium mb-1">Email <span class="text-red">*</span></label><input type="email" required class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-yellow-500"></div>
+                        <div><label class="block text-gray-700 font-medium mb-1">Phone <span class="text-red">*</span></label><input type="tel" required class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-yellow-500"></div>
+                        <div><label class="block text-gray-700 font-medium mb-1">Service Required</label>
+                            <select class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-yellow-500 bg-white">
+                                <option>-- Select a service --</option>
+                                <option>Pipe & Fluid Systems (HDPE Welding)</option>
+                                <option>Conveyor Splicing & Maintenance</option>
                                 <option>TMM Brake Testing</option>
                                 <option>Supply Division</option>
-                                <option>Civil &amp; Construction</option>
+                                <option>Civil & Construction</option>
                                 <option>Emergency Call‑Out</option>
                                 <option>Other / Multiple Services</option>
                             </select>
                         </div>
-                        <div>
-                            <label class="block text-gray-700 font-medium mb-1">Message <span class="text-red">*</span></label>
-                            <textarea rows="4" required class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-transparent"></textarea>
+                        <div><label class="block text-gray-700 font-medium mb-1">Message <span class="text-red">*</span></label><textarea rows="4" required class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-yellow-500"></textarea></div>
+                        <button type="submit" class="btn-red text-white px-6 py-3 rounded font-semibold w-full transition">Send Message <i class="fas fa-paper-plane ml-2"></i></button>
+                    </form>
+                </div>
+
+                <!-- Map -->
+                <div>
+                    <h2 class="text-2xl font-bold text-dark">Location</h2>
+                    <div class="w-12 h-1 bg-gold my-4"></div>
+                    <div class="h-64 bg-light rounded-lg overflow-hidden shadow"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14414.117857732442!2d29.044322!3d-24.185964!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1ec099fd47dfc4df%3A0xab9a0c5dddb7a3b0!2sMokopane%2C%200600!5e0!3m2!1sen!2sza!4v1691768285123!5m2!1sen!2sza" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe></div>
+                </div>
+
+                <!-- Emergency Notice -->
+                <div class="bg-light p-6 rounded-lg shadow-md border-l-4 border-red-600">
+                    <i class="fas fa-exclamation-triangle text-red text-3xl mb-2"></i>
+                    <h3 class="text-xl font-bold text-dark">Emergency Call‑Outs Available 24/7</h3>
+                    <p class="text-gray-700 mt-2">When your operations stop, we move. Call us anytime for urgent repairs or breakdowns.</p>
+                    <a href="tel:0812474607" class="inline-block mt-4 bg-red-600 text-white px-6 py-2 rounded font-semibold hover:bg-red-700 transition"><i class="fas fa-phone-alt mr-2"></i> Call Now</a>
+                </div>
+            </div>
+
+            <!-- Desktop layout (two columns, map under contact) -->
+            <div class="hidden md:grid md:grid-cols-2 gap-12">
+                <!-- Left column -->
+                <div>
+                    <h2 class="text-2xl font-bold text-dark">Get in <span class="text-gold">Touch</span></h2>
+                    <div class="w-12 h-1 bg-gold my-4"></div>
+                    <div class="space-y-6">
+                        <div class="flex items-start gap-4">
+                            <i class="fas fa-phone-alt text-red text-2xl mt-1"></i>
+                            <div><h3 class="font-semibold">Phone</h3><p><a href="tel:0812474607" class="hover:text-red">081 247 4607</a></p><p class="text-sm text-gray-500">Available 6am–5pm Mon–Fri, 7am–3pm Sat</p></div>
                         </div>
-                        <button type="submit" class="btn-red text-white px-6 py-3 rounded font-semibold w-full transition">
-                            Send Message <i class="fas fa-paper-plane ml-2"></i>
-                        </button>
+                        <div class="flex items-start gap-4">
+                            <i class="fas fa-envelope text-red text-2xl mt-1"></i>
+                            <div><h3 class="font-semibold">Email</h3><p><a href="mailto:thabom@thamaminingsolutions.com" class="hover:text-red">thabom@thamaminingsolutions.com</a></p></div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <i class="fas fa-map-marker-alt text-red text-2xl mt-1"></i>
+                            <div><h3 class="font-semibold">Address</h3><p>1348 Magongoa Village, Mokopane, 0601, South Africa</p></div>
+                        </div>
+                    </div>
+                    <div class="mt-8 h-64 bg-light rounded-lg overflow-hidden shadow"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14414.117857732442!2d29.044322!3d-24.185964!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1ec099fd47dfc4df%3A0xab9a0c5dddb7a3b0!2sMokopane%2C%200600!5e0!3m2!1sen!2sza!4v1691768285123!5m2!1sen!2sza" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe></div>
+                </div>
+
+                <!-- Right column -->
+                <div>
+                    <h2 class="text-2xl font-bold text-dark">Request a Quote</h2>
+                    <div class="w-12 h-1 bg-gold my-4"></div>
+                    <form action="#" method="POST" class="space-y-4">
+                        <div><label class="block text-gray-700 font-medium mb-1">Name <span class="text-red">*</span></label><input type="text" required class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-yellow-500"></div>
+                        <div><label class="block text-gray-700 font-medium mb-1">Company <span class="text-gray-400 text-sm">(optional)</span></label><input type="text" class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-yellow-500"></div>
+                        <div><label class="block text-gray-700 font-medium mb-1">Email <span class="text-red">*</span></label><input type="email" required class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-yellow-500"></div>
+                        <div><label class="block text-gray-700 font-medium mb-1">Phone <span class="text-red">*</span></label><input type="tel" required class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-yellow-500"></div>
+                        <div><label class="block text-gray-700 font-medium mb-1">Service Required</label>
+                            <select class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-yellow-500 bg-white">
+                                <option>-- Select a service --</option>
+                                <option>Pipe & Fluid Systems (HDPE Welding)</option>
+                                <option>Conveyor Splicing & Maintenance</option>
+                                <option>TMM Brake Testing</option>
+                                <option>Supply Division</option>
+                                <option>Civil & Construction</option>
+                                <option>Emergency Call‑Out</option>
+                                <option>Other / Multiple Services</option>
+                            </select>
+                        </div>
+                        <div><label class="block text-gray-700 font-medium mb-1">Message <span class="text-red">*</span></label><textarea rows="4" required class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-yellow-500"></textarea></div>
+                        <button type="submit" class="btn-red text-white px-6 py-3 rounded font-semibold w-full transition">Send Message <i class="fas fa-paper-plane ml-2"></i></button>
                     </form>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <!-- Emergency Notice -->
-    <section class="bg-light py-12 text-center">
-        <div class="container mx-auto px-6">
-            <div class="bg-white p-6 rounded-lg shadow-md max-w-2xl mx-auto border-l-4 border-red-600">
-                <i class="fas fa-exclamation-triangle text-red text-3xl mb-2"></i>
-                <h3 class="text-xl font-bold text-dark">Emergency Call‑Outs Available 24/7</h3>
-                <p class="text-gray-700 mt-2">When your operations stop, we move. Call us anytime for urgent repairs or breakdowns.</p>
-                <a href="tel:0812474607" class="inline-block mt-4 bg-red-600 text-white px-6 py-2 rounded font-semibold hover:bg-red-700 transition">
-                    <i class="fas fa-phone-alt mr-2"></i> Call Now
-                </a>
+            <!-- Emergency Notice (full width, after columns on desktop) -->
+            <div class="mt-12 hidden md:block">
+                <div class="bg-light p-6 rounded-lg shadow-md border-l-4 border-red-600 max-w-2xl mx-auto">
+                    <i class="fas fa-exclamation-triangle text-red text-3xl mb-2"></i>
+                    <h3 class="text-xl font-bold text-dark">Emergency Call‑Outs Available 24/7</h3>
+                    <p class="text-gray-700 mt-2">When your operations stop, we move. Call us anytime for urgent repairs or breakdowns.</p>
+                    <a href="tel:0812474607" class="inline-block mt-4 bg-red-600 text-white px-6 py-2 rounded font-semibold hover:bg-red-700 transition"><i class="fas fa-phone-alt mr-2"></i> Call Now</a>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="bg-dark text-gray-300 py-12">
-        <div class="container mx-auto px-6">
-            <div class="grid md:grid-cols-4 gap-8">
-                <div>
-                    <div class="h-12 w-auto bg-dark rounded flex items-center justify-start">
-                        <img src="images/TMS_LOGO.jpeg" alt="Thama Mining Solutions" class="h-12 w-auto object-contain" onerror="this.style.display='none'">
+ <!-- Footer -->
+<footer class="bg-dark text-gray-300 py-12">
+    <div class="container mx-auto px-6">
+        <div class="grid md:grid-cols-4 gap-8">
+            <div>
+                <img src="images/TMS_LOGO.jpeg" alt="Thama Mining Solutions" class="h-[6rem] mb-4 w-auto" onerror="this.style.display='none'">
+                <p>Mining services & engineering contractor.<br>B2B support for mines.</p>
+            </div>
+            <div>
+                <h4 class="text-white font-semibold mb-4">Quick Links</h4>
+                <ul class="space-y-2">
+                    <li><a href="index.html" class="hover:text-gold">Home</a></li>
+                    <li><a href="about.html" class="hover:text-gold">About</a></li>
+                    <li><a href="services.html" class="hover:text-gold">Services</a></li>
+                    <li><a href="contact.html" class="hover:text-gold">Contact</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-white font-semibold mb-4">Contact</h4>
+                <div class="space-y-3">
+                    <div class="flex items-center">
+                        <i class="fas fa-phone w-5 mr-2"></i>
+                        <a href="tel:0812474607" class="hover:text-gold">081 247 4607</a>
                     </div>
-                    <p class="mt-4">Mining services & engineering contractor.<br>B2B support for mines.</p>
-                </div>
-                <div>
-                    <h4 class="text-white font-semibold mb-4">Quick Links</h4>
-                    <ul class="space-y-2">
-                        <li><a href="index.html" class="hover:text-gold">Home</a></li>
-                        <li><a href="about.html" class="hover:text-gold">About</a></li>
-                        <li><a href="services.html" class="hover:text-gold">Services</a></li>
-                        <li><a href="contact.html" class="hover:text-gold">Contact</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="text-white font-semibold mb-4">Contact</h4>
-                    <p class="flex items-center"><i class="fas fa-phone mr-2 w-5"></i> <a href="tel:0812474607" class="hover:text-gold">081 247 4607</a></p>
-                    <p class="flex items-center mt-2"><i class="fas fa-envelope mr-2 w-5"></i> <a href="mailto:thabom@thamaminingsolutions.com" class="hover:text-gold">thabom@thamaminingsolutions.com</a></p>
-                    <p class="flex items-center mt-2"><i class="fas fa-map-marker-alt mr-2 w-5"></i> 1348 Magongoa Village, Mokopane, 0601</p>
-                </div>
-                <div>
-                    <h4 class="text-white font-semibold mb-4">Emergency</h4>
-                    <p class="text-red-500 font-bold">24/7 Call‑Out Available</p>
-                    <p class="mt-2">When your operations stop, we move.</p>
+                    <div class="flex items-center">
+                        <i class="fas fa-envelope w-5 mr-2"></i>
+                        <a href="mailto:thabom@thamaminingsolutions.com" class="hover:text-gold">thabom@thamaminingsolutions.com</a>
+                    </div>
+                    <div class="flex items-start">
+                        <i class="fas fa-map-marker-alt w-5 mr-2 mt-0.5"></i>
+                        <span>1348 Magongoa Village, Mokopane, 0601</span>
+                    </div>
                 </div>
             </div>
-            <div class="border-t border-gray-700 mt-8 pt-6 text-center text-sm">
-                &copy; 2025 Thama Mining Solutions (Pty) Ltd. All rights reserved.
+            <div>
+                <h4 class="text-white font-semibold mb-4">Emergency</h4>
+                <p class="text-red-500 font-bold">24/7 Call‑Out Available</p>
+                <p class="mt-2">When your operations stop, we move.</p>
             </div>
         </div>
-    </footer>
+        <div class="border-t border-gray-700 mt-8 pt-6 text-center text-sm">
+            &copy; 2025 Thama Mining Solutions (Pty) Ltd. All rights reserved.<br>
+            Designed by <a href="https://precisiondesignsagency.com/" target="_blank" class="text-gold hover:underline">Precision Designs Agency</a>
+        </div>
+    </div>
+</footer>
 
-    <a href="https://wa.me/27812474607?text=Hello%2C%20I%20need%20mining%20support" class="floating-wa" target="_blank" rel="noopener noreferrer">
-        <i class="fab fa-whatsapp"></i>
-    </a>
+    <a href="https://wa.me/27812474607?text=Hello%2C%20I%20need%20mining%20support" class="floating-wa" target="_blank"><i class="fab fa-whatsapp"></i></a>
 
     <script>
-        // Mobile menu toggle
         const menuBtn = document.getElementById('menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
-        if (menuBtn && mobileMenu) {
-            menuBtn.addEventListener('click', () => {
-                mobileMenu.classList.toggle('hidden');
-            });
-        }
+        if (menuBtn && mobileMenu) menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
     </script>
 </body>
 </html>

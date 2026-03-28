@@ -4,421 +4,327 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Thama Mining Solutions | Mining Contractor</title>
-    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         :root {
-            --dark: #111111;
-            --dark-2: #1A1A1A;
-            --dark-3: #242424;
-            --red: #C62828;
-            --red-hover: #a82323;
-            --gold: #D4A017;
-            --light: #F5F5F5;
-            --light-gray: #F9FAFB;
-            --white: #ffffff;
-            --gray: #6b7280;
-            --text: #333333;
-            --card-bg: #ffffff;
+            --color-dark: #1A1A1A;
+            --color-red: #C62828;
+            --color-gold: #D4A017;
+            --color-light: #F5F5F5;
         }
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Barlow', sans-serif; color: var(--text); background: var(--white); }
-        h1,h2,h3,h4 { font-family: 'Barlow Condensed', sans-serif; letter-spacing: 0.02em; }
-
-        /* NAV */
-        nav { background: var(--dark); color: white; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 40; }
-        .nav-logo { display: flex; align-items: center; gap: 0.5rem; }
-        .nav-logo img { height: 4rem; width: auto; }
-        .logo-fallback { width: 2.5rem; height: 2.5rem; border-radius: 4px; background: #D4A017; display: none; align-items: center; justify-content: center; font-weight: 700; color: #111; font-size: 0.85rem; }
-        .nav-links { display: flex; gap: 2rem; font-weight: 500; font-size: 0.95rem; }
-        .nav-links a { color: #d1d5db; text-decoration: none; transition: color 0.2s; }
-        .nav-links a:hover { color: var(--gold); }
-        .nav-links a.active { color: var(--gold); border-bottom: 2px solid var(--gold); padding-bottom: 2px; }
-        .nav-cta { background: var(--red); color: white; padding: 0.5rem 1.25rem; border-radius: 4px; font-weight: 600; text-decoration: none; font-size: 0.9rem; transition: background 0.2s; }
-        .nav-cta:hover { background: var(--red-hover); }
-        .nav-hamburger { display: none; font-size: 1.5rem; color: white; cursor: pointer; }
-        .mobile-menu { display: none; flex-direction: column; background: var(--dark-2); padding: 1rem; border-top: 1px solid #2e2e2e; margin-top: 1rem; }
-        .mobile-menu a { color: #d1d5db; padding: 0.75rem 0; text-decoration: none; font-size: 1rem; border-bottom: 1px solid #2e2e2e; }
-        .mobile-menu a:last-child { border-bottom: none; }
-        .mobile-menu a.active { color: var(--gold); }
-        .mobile-menu .nav-cta-mobile { background: var(--red); color: white; text-align: center; padding: 0.75rem; border-radius: 4px; margin-top: 0.5rem; text-decoration: none; display: block; }
-
-        /* HERO */
-        .hero { background: var(--dark); color: white; padding: 5rem 2rem; position: relative; overflow: hidden; text-align: center; }
-        .hero-bg { position: absolute; inset: 0; background-image: url('images/about_banner.jpg'); background-size: cover; background-position: center; opacity: 0.25; }
-        .hero-content { position: relative; z-index: 1; max-width: 700px; margin: 0 auto; }
-        .hero h1 { font-size: 3.5rem; font-weight: 800; line-height: 1.05; margin-bottom: 1rem; }
-        .hero-divider { width: 5rem; height: 3px; background: var(--gold); margin: 1rem auto; }
-        .hero p { font-size: 1.15rem; color: #d1d5db; }
-
-        /* UTILITIES */
-        .section { padding: 4rem 2rem; }
-        .container { max-width: 1100px; margin: 0 auto; }
-        .section-heading { margin-bottom: 2rem; }
-        .section-heading h2 { font-size: 2.2rem; font-weight: 800; color: var(--dark); }
-        .section-heading .divider { width: 3.5rem; height: 3px; background: var(--gold); margin-top: 0.5rem; }
-        .section-heading.center { text-align: center; }
-        .section-heading.center .divider { margin: 0.5rem auto 0; }
-
-        /* WHO WE ARE */
-        .two-col { display: flex; flex-direction: column; gap: 3rem; }
-        @media (min-width: 768px) { .two-col { flex-direction: row; align-items: center; } .two-col > * { flex: 1; } }
-        .site-img { width: 100%; height: 22rem; object-fit: cover; border-radius: 6px; box-shadow: 0 8px 30px rgba(0,0,0,0.12); }
-        .who-text p { color: var(--gray); line-height: 1.8; margin-bottom: 1rem; }
-        .highlight-badge { display: inline-block; background: var(--light); border-left: 3px solid var(--gold); padding: 0.6rem 1rem; border-radius: 0 4px 4px 0; font-weight: 600; font-size: 0.9rem; color: var(--dark); margin-top: 1.25rem; }
-
-        /* TRACK RECORD (Lighter background) */
-        .track-record { background: var(--light-gray); }
-        .track-record .section-heading h2 { color: var(--dark); }
-        .track-record .section-heading p { color: var(--gray); margin-top: 0.5rem; }
-        .projects-grid { display: grid; grid-template-columns: 1fr; gap: 1.5rem; margin-top: 2rem; }
-        @media (min-width: 768px) { .projects-grid { grid-template-columns: repeat(3, 1fr); } }
-        .project-card { background: var(--white); border: 1px solid #e5e7eb; border-top: 3px solid var(--gold); border-radius: 6px; padding: 1.25rem; transition: transform 0.2s, box-shadow 0.2s; }
-        .project-card:hover { transform: translateY(-3px); box-shadow: 0 8px 20px rgba(0,0,0,0.08); border-top-color: var(--red); }
-        .client-tag { font-family: 'Barlow Condensed', sans-serif; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.5rem; }
-        .project-card h3 { font-size: 1.1rem; font-weight: 700; color: var(--dark); margin-bottom: 0.5rem; }
-        .project-card p { font-size: 0.85rem; color: var(--gray); line-height: 1.6; }
-        .status { display: inline-flex; align-items: center; gap: 0.4rem; margin-top: 1rem; font-size: 0.75rem; font-weight: 600; padding: 0.2rem 0.6rem; border-radius: 999px; }
-        .status.completed { background: #eef2ff; color: #1e40af; }
-        .status.ongoing { background: #e6f9ed; color: #15803d; }
-        .status .dot { width: 6px; height: 6px; border-radius: 50%; background: currentColor; }
-
-        /* GALLERY */
-        .gallery-section { background: var(--white); }
-        .gallery-scroll-wrap { position: relative; padding: 0 2rem; margin-top: 2rem; }
-        .gallery-scroll { overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; -ms-overflow-style: none; display: flex; gap: 1.25rem; padding-bottom: 0.5rem; }
+        .bg-dark { background-color: var(--color-dark); }
+        .bg-light { background-color: var(--color-light); }
+        .text-red { color: var(--color-red); }
+        .text-gold { color: var(--color-gold); }
+        .btn-red { background-color: var(--color-red); transition: background-color 0.2s; }
+        .btn-red:hover { background-color: #a82323; }
+        .floating-wa {
+            position: fixed; bottom: 24px; right: 24px; z-index: 50;
+            background-color: #25D366; border-radius: 50%; width: 56px; height: 56px;
+            display: flex; align-items: center; justify-content: center;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15); transition: transform 0.2s;
+        }
+        .floating-wa:hover { transform: scale(1.05); }
+        .floating-wa i { font-size: 28px; color: white; }
         .gallery-scroll::-webkit-scrollbar { display: none; }
-        .gallery-item { flex-shrink: 0; width: 18rem; scroll-snap-align: start; }
-        .gallery-item img { width: 100%; height: 14rem; object-fit: cover; border-radius: 6px; box-shadow: 0 4px 16px rgba(0,0,0,0.1); display: block; }
-        .gallery-nav { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(0,0,0,0.5); color: white; border: none; width: 2.5rem; height: 2.5rem; border-radius: 50%; cursor: pointer; font-size: 0.9rem; display: flex; align-items: center; justify-content: center; transition: background 0.2s; z-index: 5; }
-        .gallery-nav:hover { background: rgba(0,0,0,0.8); }
-        .gallery-nav.prev { left: 0; }
-        .gallery-nav.next { right: 0; }
-        .gallery-dots { display: flex; justify-content: center; gap: 0.5rem; margin-top: 1rem; }
-        .gallery-dots button { width: 0.7rem; height: 0.7rem; border-radius: 50%; border: none; background: #cbd5e1; cursor: pointer; transition: all 0.2s; }
-        .gallery-dots button.active { background: var(--gold); transform: scale(1.25); }
-
-        /* MISSION */
-        .mission-grid { display: grid; grid-template-columns: 1fr; gap: 2rem; }
-        @media (min-width: 768px) { .mission-grid { grid-template-columns: 1fr 1fr; } }
-        .mission-block h3 { font-size: 1.5rem; font-weight: 700; color: var(--dark); margin-bottom: 0.5rem; }
-        .mission-block .divider { width: 2.5rem; height: 3px; background: var(--gold); margin-bottom: 1rem; }
-        .mission-block p { color: var(--gray); line-height: 1.8; }
-        .approach-list { list-style: none; }
-        .approach-list li { display: flex; gap: 0.75rem; align-items: flex-start; padding: 0.6rem 0; border-bottom: 1px solid #f0f0f0; color: var(--gray); line-height: 1.6; }
-        .approach-list li:last-child { border-bottom: none; }
-        .approach-list li i { color: var(--gold); margin-top: 0.2rem; flex-shrink: 0; }
-
-        /* SAFETY (Lighter background) */
-        .safety-section { background: var(--light-gray); }
-        .safety-section .section-heading h2 { color: var(--dark); }
-        .safety-sub { color: var(--gray); margin-top: 0.5rem; font-size: 1rem; }
-        .certs-grid { display: grid; grid-template-columns: 1fr; gap: 1rem; margin-top: 2rem; }
-        @media (min-width: 640px) { .certs-grid { grid-template-columns: 1fr 1fr; } }
-        @media (min-width: 1024px) { .certs-grid { grid-template-columns: repeat(4, 1fr); } }
-        .cert-card { background: var(--white); border: 1px solid #e5e7eb; border-radius: 6px; padding: 1.25rem; text-align: center; transition: all 0.2s; }
-        .cert-card:hover { border-color: var(--gold); transform: translateY(-3px); }
-        .cert-icon { width: 2.5rem; height: 2.5rem; background: rgba(212,160,23,0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 0.75rem; color: var(--gold); font-size: 1rem; }
-        .cert-card h4 { font-size: 0.95rem; font-weight: 700; color: var(--dark); margin-bottom: 0.3rem; }
-        .cert-card p { font-size: 0.8rem; color: var(--gray); line-height: 1.5; }
-
-        /* CTA (Dark gray instead of red) */
-        .cta-section { background: var(--dark-2); color: white; padding: 3rem 2rem; text-align: center; }
-        .cta-section h2 { font-size: 2rem; font-weight: 800; margin-bottom: 0.75rem; }
-        .cta-section p { font-size: 1rem; color: #d1d5db; margin-bottom: 1.5rem; }
-        .cta-buttons { display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center; }
-        .btn-outline { border: 2px solid white; color: white; padding: 0.6rem 1.5rem; border-radius: 4px; font-weight: 600; font-size: 0.9rem; text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem; transition: all 0.2s; }
-        .btn-outline:hover { background: white; color: var(--dark-2); }
-        .btn-dark { background: var(--dark); color: white; padding: 0.6rem 1.5rem; border-radius: 4px; font-weight: 600; font-size: 0.9rem; text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem; transition: background 0.2s; }
-        .btn-dark:hover { background: #2a2a2a; }
-
-        /* FOOTER */
-        footer { background: var(--dark); color: #9ca3af; padding: 3rem 2rem; }
-        .footer-grid { display: grid; grid-template-columns: 1fr; gap: 2rem; max-width: 1100px; margin: 0 auto; }
-        @media (min-width: 768px) { .footer-grid { grid-template-columns: repeat(4, 1fr); } }
-        footer img { height: 3.5rem; margin-bottom: 1rem; }
-        footer p { font-size: 0.85rem; line-height: 1.6; }
-        footer h4 { color: white; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 1rem; letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 1rem; }
-        footer ul { list-style: none; }
-        footer ul li { margin-bottom: 0.5rem; }
-        footer a { color: #9ca3af; text-decoration: none; transition: color 0.2s; font-size: 0.85rem; }
-        footer a:hover { color: var(--gold); }
-        .footer-emergency { color: #ef4444; font-weight: 700; font-size: 0.9rem; }
-        .footer-bottom { max-width: 1100px; margin: 2rem auto 0; border-top: 1px solid #2e2e2e; padding-top: 1rem; text-align: center; font-size: 0.75rem; }
-
-        /* FLOATING WA */
-        .floating-wa { position: fixed; bottom: 1.5rem; right: 1.5rem; z-index: 50; background: #25D366; border-radius: 50%; width: 3.5rem; height: 3.5rem; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 16px rgba(0,0,0,0.2); transition: transform 0.2s; text-decoration: none; }
-        .floating-wa:hover { transform: scale(1.08); }
-        .floating-wa i { font-size: 1.6rem; color: white; }
-
-        @media (max-width: 767px) {
-            nav { padding: 1rem; }
-            .nav-links, .nav-cta { display: none; }
-            .nav-hamburger { display: block; }
-            .section { padding: 2.5rem 1rem; }
-            .hero { padding: 3rem 1rem; }
-            .hero h1 { font-size: 2rem; }
-            .cta-section { padding: 2.5rem 1rem; }
-            footer { padding: 2rem 1rem; }
-            .gallery-scroll-wrap { padding: 0 1rem; }
-            .gallery-item { width: 14rem; }
-            .gallery-item img { height: 10rem; }
-        }
+        .gallery-scroll { scrollbar-width: none; }
     </style>
 </head>
-<body>
+<body class="bg-light font-sans antialiased">
 
-<nav>
-    <div class="nav-logo">
-        <img src="images/TMS_LOGO.jpeg" alt="Thama Mining Solutions" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
-        <div class="logo-fallback">TM</div>
+    <!-- Navbar (same structure) -->
+<nav class="bg-dark text-white py-4 px-6 md:px-12 sticky top-0 z-40">
+    <div class="flex justify-between items-center">
+        <div class="flex items-center">
+            <div class="bg-white p-1 rounded shadow-md">
+                <img src="images/TMS_LOGO.jpeg" alt="Thama Mining Solutions" class="h-[4rem] w-auto object-contain">
+            </div>
+        </div>
+        <div class="hidden md:flex space-x-8 font-medium">
+            <a href="index.html" class="hover:text-gold transition">Home</a>
+            <a href="about.html" class="text-gold border-b-2 border-gold pb-1">About</a>
+            <a href="services.html" class="hover:text-gold transition">Services</a>
+            <a href="contact.html" class="hover:text-gold transition">Contact</a>
+        </div>
+        <div class="md:hidden">
+            <button id="menu-btn" class="focus:outline-none"><i class="fas fa-bars text-2xl"></i></button>
+        </div>
+        <a href="tel:0812474607" class="hidden md:inline-block bg-red-600 hover:bg-red-700 text-white px-5 py-2 rounded font-semibold transition">
+            <i class="fas fa-phone-alt mr-2"></i> Call Now
+        </a>
     </div>
-    <div class="nav-links">
-        <a href="index.html">Home</a>
-        <a href="about.html" class="active">About</a>
-        <a href="services.html">Services</a>
-        <a href="contact.html">Contact</a>
+    <div id="mobile-menu" class="hidden md:hidden mt-4 pt-4 border-t border-gray-700">
+        <a href="index.html" class="block py-2 hover:text-gold transition">Home</a>
+        <a href="about.html" class="block py-2 text-gold transition">About</a>
+        <a href="services.html" class="block py-2 hover:text-gold transition">Services</a>
+        <a href="contact.html" class="block py-2 hover:text-gold transition">Contact</a>
+        <a href="tel:0812474607" class="block mt-2 bg-red-600 text-white text-center px-4 py-2 rounded font-semibold transition">
+            <i class="fas fa-phone-alt mr-2"></i> Call Now
+        </a>
     </div>
-    <div class="nav-hamburger"><i class="fas fa-bars"></i></div>
-    <a href="tel:0812474607" class="nav-cta"><i class="fas fa-phone-alt"></i> Call Now</a>
 </nav>
-<div class="mobile-menu" id="mobileMenu">
-    <a href="index.html">Home</a>
-    <a href="about.html" class="active">About</a>
-    <a href="services.html">Services</a>
-    <a href="contact.html">Contact</a>
-    <a href="tel:0812474607" class="nav-cta-mobile"><i class="fas fa-phone-alt"></i> Call Now</a>
-</div>
 
-<!-- HERO -->
-<section class="hero">
-    <div class="hero-bg"></div>
-    <div class="hero-content">
-        <h1>About Us</h1>
-        <div class="hero-divider"></div>
-        <p>Reliable mining support built on experience, proven projects, and a safety-first culture.</p>
-    </div>
-</section>
+    <!-- Hero -->
+    <section class="relative bg-dark text-white py-20 bg-cover bg-center" style="background-image: url('images/about_banner.jpg'); background-blend-mode: overlay; background-color: rgba(0,0,0,0.6);">
+        <div class="absolute inset-0 bg-black bg-opacity-50"></div>
+        <div class="relative container mx-auto px-6 text-center">
+            <h1 class="text-4xl md:text-5xl font-bold">About Us</h1>
+            <div class="w-20 h-1 bg-gold mx-auto mt-4"></div>
+            <p class="text-xl text-gray-200 mt-4 max-w-2xl mx-auto">Reliable mining support built on experience, proven projects, and a safety-first culture.</p>
+        </div>
+    </section>
 
-<!-- WHO WE ARE -->
-<section class="section" style="background:white;">
-    <div class="container">
-        <div class="two-col">
-            <div>
-                <img src="images/Team_on_side_1.jpg" alt="Thama team on site" class="site-img"
-                     onerror="this.style.background='#222'; this.style.height='22rem'; this.style.display='block'; this.style.borderRadius='6px'; this.alt='';">
-            </div>
-            <div class="who-text">
-                <div class="section-heading">
-                    <h2>Who We Are</h2>
-                    <div class="divider"></div>
+    <!-- Who We Are (image: mobile cover, desktop contain) -->
+    <section class="bg-white py-16">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row items-center gap-12">
+                <div class="md:w-1/2 flex justify-center">
+                    <div class="w-full max-w-md md:max-w-full">
+                        <img src="images/About banner.webp" alt="Thama team on site" 
+                             class="rounded-lg shadow-lg w-full h-auto md:h-96 object-cover md:object-contain">
+                    </div>
                 </div>
-                <p>Thama Mining Solutions (Pty) Ltd is a B2B mining services and engineering contractor based in Mokopane, Limpopo. We support mine operators, processing plant managers, and facilities teams with hands-on technical services.</p>
-                <p>Our expertise spans HDPE pipe systems (butt welding &amp; jointing), conveyor maintenance, equipment compliance (TMM brake testing), supply of mining consumables including quarry aggregates, and minor civil works.</p>
-                <p>We operate in the heart of South Africa's Waterberg mining belt — serving clients such as Ivanplats (Platreef), Anglo American's Mogalakwena mine, and Redpath Mining.</p>
-                <span class="highlight-badge"><i class="fas fa-map-marker-alt" style="color:var(--gold); margin-right:0.4rem;"></i> Based in Mokopane, Limpopo</span>
+                <div class="md:w-1/2">
+                    <h2 class="text-3xl font-bold text-dark">Who We Are</h2>
+                    <div class="w-16 h-1 bg-gold my-4"></div>
+                    <p class="text-gray-700 mb-4">Thama Mining Solutions (Pty) Ltd is a B2B mining services and engineering contractor based in Mokopane, Limpopo. We support mine operators, processing plant managers, and facilities teams with on-site technical services.</p>
+                    <p class="text-gray-700 mb-4">Our expertise spans HDPE pipe systems, conveyor maintenance, equipment compliance (TMM brake testing), supply of mining consumables, and minor civil works. We pride ourselves on emergency call-out capability and a safety-first culture.</p>
+                    <p class="text-gray-700">We operate in the heart of South Africa's Waterberg mining belt, serving clients such as Ivanplats (Platreef), Anglo American's Mogalakwena mine, and Redpath Mining.</p>
+                </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<!-- TRACK RECORD (Lighter background) -->
-<section class="section track-record">
-    <div class="container">
-        <div class="section-heading">
-            <h2>Our Project Track Record</h2>
-            <p>Real work. Real clients. Proven delivery across the Waterberg mining belt.</p>
+    <!-- Project Track Record (light background) -->
+    <section class="bg-gray-50 py-16">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-dark">Our Project Track Record</h2>
+                <div class="w-20 h-1 bg-gold mx-auto mt-4"></div>
+                <p class="text-gray-600 mt-2">Real work. Real clients. Proven delivery across the Waterberg mining belt.</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white border border-gray-200 border-t-4 border-t-gold rounded-lg p-6 transition hover:shadow-md">
+                    <div class="text-gold font-bold text-sm uppercase mb-2">Ivanplats Mine — Platreef Project</div>
+                    <h3 class="text-xl font-bold mb-2">HDPE Butt Welding — Phase 1</h3>
+                    <p class="text-gray-600">Completed Phase 1 HDPE butt welding scope for Ivanplats (Ivanhoe Mines) at the Platreef platinum group metals project.</p>
+                    <span class="inline-block mt-4 text-sm font-semibold text-green-700 bg-green-50 px-3 py-1 rounded-full">✓ Completed</span>
+                </div>
+                <div class="bg-white border border-gray-200 border-t-4 border-t-gold rounded-lg p-6 transition hover:shadow-md">
+                    <div class="text-gold font-bold text-sm uppercase mb-2">PK Consulting & Ditiro Properties</div>
+                    <h3 class="text-xl font-bold mb-2">HDPE Works — Mogalakwena Municipality</h3>
+                    <p class="text-gray-600">Carried out various HDPE butt welding scopes for PK Consulting and Ditiro Properties on behalf of Mogalakwena Local Municipality.</p>
+                    <span class="inline-block mt-4 text-sm font-semibold text-green-700 bg-green-50 px-3 py-1 rounded-full">✓ Completed</span>
+                </div>
+                <div class="bg-white border border-gray-200 border-t-4 border-t-gold rounded-lg p-6 transition hover:shadow-md">
+                    <div class="text-gold font-bold text-sm uppercase mb-2">Redpath Mining — Valterra</div>
+                    <h3 class="text-xl font-bold mb-2">Quarry Sand & Stone Supply</h3>
+                    <p class="text-gray-600">Currently supplying quarry sands and stones to Redpath Mining at the Valterra site within the Mogalakwena Complex.</p>
+                    <span class="inline-block mt-4 text-sm font-semibold text-yellow-700 bg-yellow-50 px-3 py-1 rounded-full">⟳ Ongoing</span>
+                </div>
+            </div>
         </div>
-        <div class="projects-grid">
-            <div class="project-card">
-                <div class="client-tag">Ivanplats Mine — Platreef Project</div>
-                <h3>HDPE Butt Welding — Phase 1</h3>
-                <p>Completed Phase 1 HDPE butt welding scope for Ivanplats (Ivanhoe Mines) at the Platreef platinum group metals project — delivering compliant pipework installations to specification and on schedule.</p>
-                <span class="status completed"><span class="dot"></span> Completed</span>
-            </div>
-            <div class="project-card">
-                <div class="client-tag">PK Consulting &amp; Ditiro Properties</div>
-                <h3>HDPE Works — Mogalakwena Municipality</h3>
-                <p>Carried out various HDPE butt welding scopes for PK Consulting and Ditiro Properties on behalf of Mogalakwena Local Municipality — delivering durable pipe solutions for municipal infrastructure.</p>
-                <span class="status completed"><span class="dot"></span> Completed</span>
-            </div>
-            <div class="project-card">
-                <div class="client-tag">Redpath Mining — Valterra, Mogalakwena</div>
-                <h3>Quarry Sand &amp; Stone Supply</h3>
-                <p>Currently supplying quarry sands and stones to Redpath Mining at the Valterra site within the Mogalakwena Complex — providing consistent, quality aggregate material supporting ongoing operations.</p>
-                <span class="status ongoing"><span class="dot"></span> Ongoing</span>
-            </div>
-        </div>
-    </div>
-</section>
+    </section>
 
-<!-- GALLERY -->
-<section class="section gallery-section">
-    <div class="container">
-        <div class="section-heading center">
-            <h2>Our Team in the Field</h2>
-            <div class="divider"></div>
-        </div>
-        <div class="gallery-scroll-wrap">
-            <div class="gallery-scroll" id="galleryScroll"></div>
-            <button class="gallery-nav prev" id="galleryPrev"><i class="fas fa-chevron-left"></i></button>
-            <button class="gallery-nav next" id="galleryNext"><i class="fas fa-chevron-right"></i></button>
-        </div>
-        <div class="gallery-dots" id="galleryDots"></div>
-    </div>
-</section>
-
-<!-- MISSION & APPROACH -->
-<section class="section" style="background:white;">
-    <div class="container">
-        <div class="mission-grid">
-            <div class="mission-block">
-                <h3>Our Mission</h3>
-                <div class="divider"></div>
-                <p>To deliver reliable, compliant, and responsive mining support services that minimise downtime and maximise operational efficiency for our clients — because when your operations stop, we move.</p>
+    <!-- Gallery: Horizontal scroll with buttons, using 12 images with mixed extensions -->
+    <section class="bg-white py-16">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-10">
+                <h2 class="text-3xl font-bold text-dark">Our Team in the Field</h2>
+                <div class="w-20 h-1 bg-gold mx-auto mt-4"></div>
             </div>
-            <div class="mission-block">
-                <h3>Our Work Approach</h3>
-                <div class="divider"></div>
-                <ul class="approach-list">
-                    <li><i class="fas fa-shield-alt"></i><span><strong>Safety First:</strong> All work complies with Mine Health and Safety Act regulations.</span></li>
-                    <li><i class="fas fa-bolt"></i><span><strong>Fast Response:</strong> Emergency call-outs available 7 days a week.</span></li>
-                    <li><i class="fas fa-tools"></i><span><strong>Technical Excellence:</strong> Skilled technicians in HDPE welding, conveyor splicing &amp; equipment testing.</span></li>
-                    <li><i class="fas fa-handshake"></i><span><strong>Client Focus:</strong> "It's less about us and more about you."</span></li>
+            <div class="relative">
+                <div id="gallery-container" class="overflow-x-auto scroll-smooth snap-x snap-mandatory gallery-scroll">
+                    <div id="gallery-track" class="flex gap-6"></div>
+                </div>
+                <button id="gallery-prev" class="absolute left-0 top-1/2 -translate-y-1/2 bg-black bg-opacity-50 hover:bg-opacity-75 text-white p-2 rounded-full transition z-10 w-10 h-10 flex items-center justify-center"><i class="fas fa-chevron-left"></i></button>
+                <button id="gallery-next" class="absolute right-0 top-1/2 -translate-y-1/2 bg-black bg-opacity-50 hover:bg-opacity-75 text-white p-2 rounded-full transition z-10 w-10 h-10 flex items-center justify-center"><i class="fas fa-chevron-right"></i></button>
+            </div>
+            <div id="gallery-dots" class="flex justify-center space-x-2 mt-6"></div>
+        </div>
+    </section>
+
+    <!-- Mission & Approach -->
+    <section class="bg-gray-50 py-16">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-2 gap-12">
+                <div>
+                    <h3 class="text-2xl font-bold text-dark">Our Mission</h3>
+                    <div class="w-12 h-1 bg-gold my-3"></div>
+                    <p class="text-gray-700">To deliver reliable, compliant, and responsive mining support services that minimise downtime and maximise operational efficiency for our clients — because when your operations stop, we move.</p>
+                </div>
+                <div>
+                    <h3 class="text-2xl font-bold text-dark">Our Work Approach</h3>
+                    <div class="w-12 h-1 bg-gold my-3"></div>
+                    <ul class="space-y-3 text-gray-700">
+                        <li><i class="fas fa-shield-alt text-gold mr-2"></i> <strong>Safety First:</strong> All work complies with Mine Health and Safety Act regulations.</li>
+                        <li><i class="fas fa-bolt text-gold mr-2"></i> <strong>Fast Response:</strong> Emergency call-outs available 7 days a week.</li>
+                        <li><i class="fas fa-tools text-gold mr-2"></i> <strong>Technical Excellence:</strong> Skilled technicians in HDPE welding, conveyor splicing & equipment testing.</li>
+                        <li><i class="fas fa-handshake text-gold mr-2"></i> <strong>Client Focus:</strong> "It's less about us and more about you."</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Safety & Certifications -->
+    <section class="bg-white py-16">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl font-bold text-dark">Safety & Compliance</h2>
+            <div class="w-20 h-1 bg-gold mx-auto mt-4 mb-8"></div>
+            <p class="text-gray-700 max-w-3xl mx-auto mb-12">In mining, safety is non‑negotiable. Every service we provide meets or exceeds regulatory standards.</p>
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+                <div class="bg-gray-50 p-6 rounded-lg border border-gray-200 hover:border-gold transition">
+                    <i class="fas fa-certificate text-gold text-3xl mb-3"></i>
+                    <h4 class="font-bold text-lg">MHSA Compliant</h4>
+                    <p class="text-gray-600 text-sm">All operations conducted in line with the Mine Health and Safety Act.</p>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-lg border border-gray-200 hover:border-gold transition">
+                    <i class="fas fa-hard-hat text-gold text-3xl mb-3"></i>
+                    <h4 class="font-bold text-lg">PPE Always</h4>
+                    <p class="text-gray-600 text-sm">Full personal protective equipment enforced on every site.</p>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-lg border border-gray-200 hover:border-gold transition">
+                    <i class="fas fa-clipboard-list text-gold text-3xl mb-3"></i>
+                    <h4 class="font-bold text-lg">Risk Assessments</h4>
+                    <p class="text-gray-600 text-sm">Structured hazard identification before any task commences.</p>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-lg border border-gray-200 hover:border-gold transition">
+                    <i class="fas fa-car-crash text-gold text-3xl mb-3"></i>
+                    <h4 class="font-bold text-lg">TMM Brake Testing</h4>
+                    <p class="text-gray-600 text-sm">Accredited trackless mobile machinery brake testing.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA with background image -->
+    <section class="relative bg-dark text-white py-20 bg-cover bg-center" style="background-image: url('images/about_banner_last_CTA.jpg'); background-blend-mode: overlay; background-color: rgba(0,0,0,0.7);">
+        <div class="absolute inset-0 bg-black bg-opacity-60"></div>
+        <div class="relative container mx-auto px-6 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold">Ready to Work With a Reliable Mining Partner?</h2>
+            <p class="text-xl text-gray-200 mt-4 max-w-2xl mx-auto">Request a quote or call us for emergency assistance — we respond fast, any day of the week.</p>
+            <div class="mt-8 flex flex-col sm:flex-row justify-center gap-4">
+                <a href="contact.html" class="bg-red-600 hover:bg-red-700 text-white px-8 py-3 rounded font-semibold text-lg inline-flex items-center justify-center">
+                    <i class="fas fa-file-alt mr-2"></i> Request a Quote
+                </a>
+                <a href="tel:0812474607" class="border-2 border-white hover:border-gold text-white px-8 py-3 rounded font-semibold text-lg inline-flex items-center justify-center transition">
+                    <i class="fas fa-phone-alt mr-2"></i> Call Now
+                </a>
+            </div>
+        </div>
+    </section>
+
+<!-- Footer -->
+<footer class="bg-dark text-gray-300 py-12">
+    <div class="container mx-auto px-6">
+        <div class="grid md:grid-cols-4 gap-8">
+            <div>
+                <img src="images/TMS_LOGO.jpeg" alt="Thama Mining Solutions" class="h-[6rem] mb-4 w-auto" onerror="this.style.display='none'">
+                <p>Mining services & engineering contractor.<br>B2B support for mines.</p>
+            </div>
+            <div>
+                <h4 class="text-white font-semibold mb-4">Quick Links</h4>
+                <ul class="space-y-2">
+                    <li><a href="index.html" class="hover:text-gold">Home</a></li>
+                    <li><a href="about.html" class="hover:text-gold">About</a></li>
+                    <li><a href="services.html" class="hover:text-gold">Services</a></li>
+                    <li><a href="contact.html" class="hover:text-gold">Contact</a></li>
                 </ul>
             </div>
-        </div>
-    </div>
-</section>
-
-<!-- SAFETY & CERTIFICATIONS (Lighter background) -->
-<section class="section safety-section">
-    <div class="container">
-        <div class="section-heading center">
-            <h2>Safety &amp; Compliance</h2>
-            <p class="safety-sub">In mining, safety is non-negotiable. Every service we provide meets or exceeds regulatory standards.</p>
-        </div>
-        <div class="certs-grid">
-            <div class="cert-card">
-                <div class="cert-icon"><i class="fas fa-certificate"></i></div>
-                <h4>MHSA Compliant</h4>
-                <p>All operations conducted in line with the Mine Health and Safety Act — no exceptions.</p>
+            <div>
+                <h4 class="text-white font-semibold mb-4">Contact</h4>
+                <div class="space-y-3">
+                    <div class="flex items-center">
+                        <i class="fas fa-phone w-5 mr-2"></i>
+                        <a href="tel:0812474607" class="hover:text-gold">081 247 4607</a>
+                    </div>
+                    <div class="flex items-center">
+                        <i class="fas fa-envelope w-5 mr-2"></i>
+                        <a href="mailto:thabom@thamaminingsolutions.com" class="hover:text-gold">thabom@thamaminingsolutions.com</a>
+                    </div>
+                    <div class="flex items-start">
+                        <i class="fas fa-map-marker-alt w-5 mr-2 mt-0.5"></i>
+                        <span>1348 Magongoa Village, Mokopane, 0601</span>
+                    </div>
+                </div>
             </div>
-            <div class="cert-card">
-                <div class="cert-icon"><i class="fas fa-hard-hat"></i></div>
-                <h4>PPE Always</h4>
-                <p>Full personal protective equipment enforced on every site, every shift, without compromise.</p>
-            </div>
-            <div class="cert-card">
-                <div class="cert-icon"><i class="fas fa-clipboard-list"></i></div>
-                <h4>Risk Assessments</h4>
-                <p>Structured hazard identification and risk assessment carried out before any task commences.</p>
-            </div>
-            <div class="cert-card">
-                <div class="cert-icon"><i class="fas fa-car-crash"></i></div>
-                <h4>TMM Brake Testing</h4>
-                <p>Accredited trackless mobile machinery brake testing ensuring equipment compliance on site.</p>
+            <div>
+                <h4 class="text-white font-semibold mb-4">Emergency</h4>
+                <p class="text-red-500 font-bold">24/7 Call‑Out Available</p>
+                <p class="mt-2">When your operations stop, we move.</p>
             </div>
         </div>
-    </div>
-</section>
-
-<!-- CTA (Dark gray, no red) -->
-<section class="cta-section">
-    <div style="max-width:700px; margin:0 auto;">
-        <h2>Ready to Work With a Reliable Mining Partner?</h2>
-        <p>Request a quote or call us for emergency assistance — we respond fast, any day of the week.</p>
-        <div class="cta-buttons">
-            <a href="contact.html" class="btn-dark"><i class="fas fa-file-alt"></i> Request a Quote</a>
-            <a href="tel:0812474607" class="btn-outline"><i class="fas fa-phone-alt"></i> Call Now</a>
+        <div class="border-t border-gray-700 mt-8 pt-6 text-center text-sm">
+            &copy; 2025 Thama Mining Solutions (Pty) Ltd. All rights reserved.<br>
+            Designed by <a href="https://precisiondesignsagency.com/" target="_blank" class="text-gold hover:underline">Precision Designs Agency</a>
         </div>
     </div>
-</section>
-
-<!-- FOOTER -->
-<footer>
-    <div class="footer-grid">
-        <div>
-            <img src="images/TMS_LOGO.jpeg" alt="Thama Mining Solutions" onerror="this.style.display='none'">
-            <p>Mining services &amp; engineering contractor.<br>B2B support for mines across Limpopo.</p>
-        </div>
-        <div>
-            <h4>Quick Links</h4>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="services.html">Services</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </div>
-        <div>
-            <h4>Contact</h4>
-            <p><i class="fas fa-phone" style="margin-right:0.4rem;"></i> <a href="tel:0812474607">081 247 4607</a></p>
-            <p style="margin-top:0.4rem;"><i class="fas fa-envelope" style="margin-right:0.4rem;"></i> <a href="mailto:thabom@thamaminingsolutions.com">thabom@thamaminingsolutions.com</a></p>
-            <p style="margin-top:0.4rem;"><i class="fas fa-map-marker-alt" style="margin-right:0.4rem;"></i> 1348 Magongoa Village, Mokopane, 0601</p>
-        </div>
-        <div>
-            <h4>Emergency</h4>
-            <p class="footer-emergency">24/7 Call-Out Available</p>
-            <p style="margin-top:0.5rem;">When your operations stop, we move.</p>
-        </div>
-    </div>
-    <div class="footer-bottom">&copy; 2025 Thama Mining Solutions (Pty) Ltd. All rights reserved.</div>
 </footer>
 
-<a href="https://wa.me/27812474607?text=Hello%2C%20I%20need%20mining%20support" class="floating-wa" target="_blank" rel="noopener noreferrer">
-    <i class="fab fa-whatsapp"></i>
-</a>
+    <a href="https://wa.me/27812474607?text=Hello%2C%20I%20need%20mining%20support" class="floating-wa" target="_blank" rel="noopener noreferrer">
+        <i class="fab fa-whatsapp"></i>
+    </a>
 
-<script>
-    // Hamburger menu toggle
-    const hamburger = document.querySelector('.nav-hamburger');
-    const mobileMenu = document.getElementById('mobileMenu');
-    hamburger.addEventListener('click', () => {
-        mobileMenu.style.display = mobileMenu.style.display === 'flex' ? 'none' : 'flex';
-    });
+    <script>
+        // Mobile menu
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        if (menuBtn && mobileMenu) {
+            menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+        }
 
-    // Gallery
-    const teamImages = ["on_site.jpg","on_site_2.jpg","on_site_3.jpg","on_site_4.jpg","on_site_5.jpg","team on site.jpg","Team_on_side_1.jpg"];
-    const scroll = document.getElementById('galleryScroll');
-    const dotsEl = document.getElementById('galleryDots');
+        // Gallery: build with 12 images, extensions as specified
+        const images = [
+            "on_site_1.jpg", "on_site_2.jpg", "on_site_3.jpg", "on_site_4.jpg", "on_site_5.jpg",
+            "on_site_6.jpg", "on_site_7.jpg",
+            "on_site_8.webp", "on_site_9.webp", "on_site_10.webp", "on_site_11.webp", "on_site_12.webp"
+        ];
+        const track = document.getElementById('gallery-track');
+        const dotsEl = document.getElementById('gallery-dots');
+        const container = document.getElementById('gallery-container');
+        const prevBtn = document.getElementById('gallery-prev');
+        const nextBtn = document.getElementById('gallery-next');
 
-    teamImages.forEach((src, i) => {
-        const div = document.createElement('div');
-        div.className = 'gallery-item';
-        const img = document.createElement('img');
-        img.src = `images/${src}`;
-        img.alt = `Team at work ${i+1}`;
-        div.appendChild(img);
-        scroll.appendChild(div);
-    });
+        images.forEach((src, i) => {
+            const div = document.createElement('div');
+            div.className = 'flex-shrink-0 w-64 md:w-80 snap-start';
+            const img = document.createElement('img');
+            img.src = `images/${src}`;
+            img.alt = `Team at work ${i+1}`;
+            img.classList.add('w-full', 'h-48', 'md:h-64', 'object-cover', 'rounded-lg', 'shadow-lg');
+            div.appendChild(img);
+            track.appendChild(div);
 
-    teamImages.forEach((_, i) => {
-        const btn = document.createElement('button');
-        if (i === 0) btn.classList.add('active');
-        btn.addEventListener('click', () => {
-            const w = (scroll.children[0]?.clientWidth || 288) + 20;
-            scroll.scrollTo({ left: w * i, behavior: 'smooth' });
+            const dot = document.createElement('button');
+            dot.classList.add('w-2', 'h-2', 'rounded-full', 'bg-gray-400', 'transition-all', 'duration-200');
+            dot.addEventListener('click', () => {
+                const scrollAmount = div.offsetWidth * i + 24 * i;
+                container.scrollTo({ left: scrollAmount, behavior: 'smooth' });
+            });
+            dotsEl.appendChild(dot);
         });
-        dotsEl.appendChild(btn);
-    });
 
-    function updateDots() {
-        const w = (scroll.children[0]?.clientWidth || 288) + 20;
-        const idx = Math.round(scroll.scrollLeft / w);
-        dotsEl.querySelectorAll('button').forEach((b, i) => b.classList.toggle('active', i === idx));
-    }
+        function updateDots() {
+            const itemWidth = track.children[0]?.offsetWidth + 24 || 300;
+            const idx = Math.round(container.scrollLeft / itemWidth);
+            Array.from(dotsEl.children).forEach((dot, i) => {
+                dot.classList.toggle('bg-gold', i === idx);
+                dot.classList.toggle('bg-gray-400', i !== idx);
+            });
+        }
 
-    document.getElementById('galleryPrev').addEventListener('click', () => {
-        const w = (scroll.children[0]?.clientWidth || 288) + 20;
-        scroll.scrollBy({ left: -w, behavior: 'smooth' });
-    });
-    document.getElementById('galleryNext').addEventListener('click', () => {
-        const w = (scroll.children[0]?.clientWidth || 288) + 20;
-        scroll.scrollBy({ left: w, behavior: 'smooth' });
-    });
-    scroll.addEventListener('scroll', updateDots);
-    setTimeout(updateDots, 100);
-</script>
+        prevBtn.addEventListener('click', () => {
+            const itemWidth = track.children[0]?.offsetWidth + 24 || 300;
+            container.scrollBy({ left: -itemWidth, behavior: 'smooth' });
+        });
+        nextBtn.addEventListener('click', () => {
+            const itemWidth = track.children[0]?.offsetWidth + 24 || 300;
+            container.scrollBy({ left: itemWidth, behavior: 'smooth' });
+        });
+        container.addEventListener('scroll', updateDots);
+        setTimeout(updateDots, 100);
+    </script>
 </body>
 </html>

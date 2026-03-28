@@ -13,7 +13,6 @@
             --color-gold: #D4A017;
             --color-light: #F5F5F5;
         }
-        body { font-family: 'Inter', system-ui, -apple-system, sans-serif; }
         .bg-dark { background-color: var(--color-dark); }
         .bg-light { background-color: var(--color-light); }
         .text-red { color: var(--color-red); }
@@ -28,98 +27,32 @@
         }
         .floating-wa:hover { transform: scale(1.05); }
         .floating-wa i { font-size: 28px; color: white; }
-
-        /* Slideshow styles */
-        .slideshow-container {
-            position: relative;
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
-            border-radius: 0.5rem;
-            border-left: 4px solid var(--color-dark);
-        }
-        .slide {
-            position: absolute;
-            inset: 0;
-            opacity: 0;
-            transition: opacity 0.8s ease-in-out;
-        }
-        .slide.active {
-            opacity: 1;
-        }
-        .slide img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        .slide-controls {
-            position: absolute;
-            bottom: 12px;
-            left: 50%;
-            transform: translateX(-50%);
-            display: flex;
-            gap: 8px;
-            z-index: 10;
-        }
-        .slide-dot {
-            width: 10px; height: 10px;
-            border-radius: 50%;
-            background: rgba(255,255,255,0.5);
-            cursor: pointer;
-            border: none;
-            transition: background 0.3s;
-        }
-        .slide-dot.active { background: var(--color-gold); }
-        .slide-btn {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background: rgba(0,0,0,0.5);
-            color: white;
-            border: none;
-            width: 36px; height: 36px;
-            border-radius: 50%;
-            cursor: pointer;
-            z-index: 10;
-            display: flex; align-items: center; justify-content: center;
-            transition: background 0.2s;
-        }
-        .slide-btn:hover { background: rgba(198,40,40,0.8); }
-        .slide-btn-prev { left: 10px; }
-        .slide-btn-next { right: 10px; }
+        .slide { transition: opacity 0.8s ease-in-out; }
     </style>
 </head>
-<body class="bg-light text-dark font-sans antialiased">
+<body class="bg-light font-sans antialiased">
 
-    <!-- Navbar with container for logo and working mobile menu -->
+    <!-- Navbar (same) -->
     <nav class="bg-dark text-white py-4 px-6 md:px-12 sticky top-0 z-40">
         <div class="flex justify-between items-center">
-            <!-- Logo container -->
             <div class="flex items-center">
-                <div class="h-12 w-auto bg-dark rounded flex items-center justify-center">
-                    <img src="images/TMS_LOGO.jpeg" alt="Thama Mining Solutions" class="h-12 w-auto object-contain"
-                         onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\'w-10 h-10 rounded flex items-center justify-center text-black font-bold bg-yellow-500\' style=\'background-color:#D4A017\'>TM</div>'">
+                <div class="bg-white p-1 rounded shadow-md">
+                    <img src="images/TMS_LOGO.jpeg" alt="Thama Mining Solutions" class="h-[4rem] w-auto object-contain">
                 </div>
             </div>
-            <!-- Desktop Navigation -->
             <div class="hidden md:flex space-x-8 font-medium">
                 <a href="index.html" class="hover:text-gold transition">Home</a>
                 <a href="about.html" class="hover:text-gold transition">About</a>
                 <a href="services.html" class="text-gold border-b-2 border-gold pb-1">Services</a>
                 <a href="contact.html" class="hover:text-gold transition">Contact</a>
             </div>
-            <!-- Mobile hamburger button -->
             <div class="md:hidden">
-                <button id="menu-btn" class="focus:outline-none">
-                    <i class="fas fa-bars text-2xl"></i>
-                </button>
+                <button id="menu-btn" class="focus:outline-none"><i class="fas fa-bars text-2xl"></i></button>
             </div>
-            <!-- Call button desktop -->
             <a href="tel:0812474607" class="hidden md:inline-block bg-red-600 hover:bg-red-700 text-white px-5 py-2 rounded font-semibold transition">
                 <i class="fas fa-phone-alt mr-2"></i> Call Now
             </a>
         </div>
-        <!-- Mobile menu (hidden by default) -->
         <div id="mobile-menu" class="hidden md:hidden mt-4 pt-4 border-t border-gray-700">
             <a href="index.html" class="block py-2 hover:text-gold transition">Home</a>
             <a href="about.html" class="block py-2 hover:text-gold transition">About</a>
@@ -131,7 +64,7 @@
         </div>
     </nav>
 
-    <!-- Page Header – background image, no red border, contact page style -->
+    <!-- Hero (single background, no duplicate) -->
     <header class="relative bg-dark text-white py-24 px-6 md:px-12 text-center bg-cover bg-center" style="background-image: url('images/server_banner.jpg'); background-blend-mode: overlay; background-color: rgba(0,0,0,0.6);">
         <div class="absolute inset-0 bg-black bg-opacity-50"></div>
         <div class="relative container mx-auto">
@@ -141,8 +74,8 @@
         </div>
     </header>
 
-    <!-- Service: Pipe & Fluid Systems — with SLIDESHOW -->
-    <section class="py-20 px-6 md:px-12 bg-white">
+    <!-- Pipe & Fluid Systems (slideshow) -->
+    <section class="py-16 px-6 md:px-12 bg-white">
         <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div>
                 <div class="flex items-center gap-4 mb-4">
@@ -156,45 +89,29 @@
                     <li><i class="fa-solid fa-circle-chevron-right text-red mr-2"></i> Long-term Maintenance Contracts</li>
                 </ul>
             </div>
-
-            <!-- Slideshow -->
-            <div class="h-64 md:h-96 relative">
-                <div class="slideshow-container h-full" id="pipeSlideshow">
-                    <div class="slide active">
-                        <img src="images/Pipe Installation & Valve Installation..jpg" alt="Pipe Installation & Valve Installation">
-                    </div>
-                    <div class="slide">
-                        <img src="images/Pipe Installation & Valve Installation _2.jpg" alt="Pipe Installation & Valve Installation 2">
-                    </div>
-                    <div class="slide">
-                        <img src="images/HDPE pipe systems_1.png" alt="HDPE Pipe Systems">
-                    </div>
-                    <div class="slide">
-                        <img src="images/HDPE pipe systems_2.png" alt="HDPE Pipe Systems 2">
-                    </div>
-                    <button class="slide-btn slide-btn-prev" onclick="changeSlide('pipeSlideshow', -1)">
-                        <i class="fas fa-chevron-left text-sm"></i>
-                    </button>
-                    <button class="slide-btn slide-btn-next" onclick="changeSlide('pipeSlideshow', 1)">
-                        <i class="fas fa-chevron-right text-sm"></i>
-                    </button>
-                    <div class="slide-controls">
-                        <button class="slide-dot active" onclick="goToSlide('pipeSlideshow', 0)"></button>
-                        <button class="slide-dot" onclick="goToSlide('pipeSlideshow', 1)"></button>
-                        <button class="slide-dot" onclick="goToSlide('pipeSlideshow', 2)"></button>
-                        <button class="slide-dot" onclick="goToSlide('pipeSlideshow', 3)"></button>
+            <div class="relative h-64 md:h-96">
+                <div id="pipeSlideshow" class="relative w-full h-full overflow-hidden rounded-lg shadow-lg">
+                    <div class="slide absolute inset-0 opacity-100 transition-opacity duration-800"><img src="images/Pipe Installation & Valve Installation..jpg" class="w-full h-full object-cover"></div>
+                    <div class="slide absolute inset-0 opacity-0 transition-opacity duration-800"><img src="images/Pipe Installation & Valve Installation _2.jpg" class="w-full h-full object-cover"></div>
+                    <div class="slide absolute inset-0 opacity-0 transition-opacity duration-800"><img src="images/HDPE pipe systems_1.png" class="w-full h-full object-cover"></div>
+                    <div class="slide absolute inset-0 opacity-0 transition-opacity duration-800"><img src="images/HDPE pipe systems_2.png" class="w-full h-full object-cover"></div>
+                    <button class="absolute left-2 top-1/2 -translate-y-1/2 bg-black/50 text-white p-2 rounded-full z-10 hover:bg-black/70" onclick="changeSlide(-1)"><i class="fas fa-chevron-left"></i></button>
+                    <button class="absolute right-2 top-1/2 -translate-y-1/2 bg-black/50 text-white p-2 rounded-full z-10 hover:bg-black/70" onclick="changeSlide(1)"><i class="fas fa-chevron-right"></i></button>
+                    <div class="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 z-10">
+                        <button class="dot w-2 h-2 rounded-full bg-white/50" data-index="0"></button>
+                        <button class="dot w-2 h-2 rounded-full bg-white/50" data-index="1"></button>
+                        <button class="dot w-2 h-2 rounded-full bg-white/50" data-index="2"></button>
+                        <button class="dot w-2 h-2 rounded-full bg-white/50" data-index="3"></button>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Service: Conveyor Systems -->
-    <section class="py-20 px-6 md:px-12 bg-light border-y border-gray-200">
+    <!-- Conveyor Systems -->
+    <section class="py-16 px-6 md:px-12 bg-gray-50">
         <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-            <div class="h-64 md:h-96 rounded border-l-4 border-red-700 overflow-hidden order-2 md:order-1">
-                <img src="images/butt Fusion Machine.jpg" alt="Butt Fusion / Conveyor equipment" class="w-full h-full object-cover">
-            </div>
+            <div class="order-2 md:order-1"><img src="images/butt Fusion Machine.jpg" alt="Conveyor equipment" class="w-full h-64 md:h-96 object-cover rounded-lg shadow-lg border-l-4 border-red-600"></div>
             <div class="order-1 md:order-2">
                 <div class="flex items-center gap-4 mb-4">
                     <i class="fa-solid fa-gears text-3xl text-gold"></i>
@@ -210,8 +127,8 @@
         </div>
     </section>
 
-    <!-- Service: Mining Equipment Services -->
-    <section class="py-20 px-6 md:px-12 bg-white">
+    <!-- Mining Equipment Services (fixed image) -->
+    <section class="py-16 px-6 md:px-12 bg-white">
         <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div>
                 <div class="flex items-center gap-4 mb-4">
@@ -225,44 +142,37 @@
                     <li><i class="fa-solid fa-circle-chevron-right text-red mr-2"></i> Processing Plant Support</li>
                 </ul>
             </div>
-            <div class="h-64  rounded border-l-4 overflow-hidden" style="border-color:var(--color-gold)">
-                <img src="images/company trucks.jpg" alt="Mining truck" class="w-full  object-cover"
-                     onerror="this.src='images/Trucks.jpg'">
-            </div>
+            <div class="border-l-4 border-gold rounded-lg overflow-hidden h-64 md:h-96"><img src="images/company trucks.jpg" alt="Mining truck" class="w-full h-full object-cover"></div>
         </div>
     </section>
 
-    <!-- Supply Division & Construction & Civil – icons inline with headings, reduced spacing, larger images -->
-    <section class="py-20 px-6 md:px-12 bg-white text-dark">
+    <!-- Supply Division & Construction (images fit properly) -->
+    <section class="py-16 px-6 md:px-12 bg-white">
         <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12">
-            <div class="border border-gray-700 p-8 rounded hover:border-red-600 transition">
-                <div class="flex items-center gap-4 mb-4">
+            <div class="border border-gray-200 p-6 rounded-lg hover:shadow-lg transition">
+                <div class="flex items-center gap-3 mb-4">
                     <i class="fa-solid fa-toolbox text-3xl text-gold"></i>
                     <h3 class="text-2xl font-bold uppercase">Supply Division</h3>
                 </div>
-                <p class="text-gray-400">Reliable procurement for critical operations. We supply mining tools, specialized engineering consumables, and equipment directly to your site, ensuring your teams never stop working due to a lack of gear.</p>
-                <div class="mt-6">
-                    <img src="images/487795086_1316566826624459_3124363926949948194_n.png" alt="On site operations" class="w-full h-64 object-cover rounded">
-                </div>
+                <p class="text-gray-600 mb-6">Reliable procurement for critical operations. We supply mining tools, specialized engineering consumables, and equipment directly to your site, ensuring your teams never stop working due to a lack of gear.</p>
+                <img src="images/487795086_1316566826624459_3124363926949948194_n.png" alt="Supply" class="w-full h-48 md:h-64 object-cover rounded">
             </div>
-            <div class="border border-gray-700 p-8 rounded hover:border-gold transition">
-                <div class="flex items-center gap-4 mb-4">
+            <div class="border border-gray-200 p-6 rounded-lg hover:shadow-lg transition">
+                <div class="flex items-center gap-3 mb-4">
                     <i class="fa-solid fa-helmet-safety text-3xl text-gold"></i>
                     <h3 class="text-2xl font-bold uppercase">Construction & Civil</h3>
                 </div>
-                <p class="text-gray-400">Beyond mechanical support, we handle the on-site minor construction works and civil engineering support required to keep surface infrastructure and access points in peak condition.</p>
-                <div class="mt-6">
-                    <img src="images/company site.png" alt="Company site" class="w-full h-64 object-cover rounded">
-                </div>
+                <p class="text-gray-600 mb-6">Beyond mechanical support, we handle the on-site minor construction works and civil engineering support required to keep surface infrastructure and access points in peak condition.</p>
+                <img src="images/company site.png" alt="Construction" class="w-full h-48 md:h-64 object-cover rounded">
             </div>
         </div>
     </section>
 
-    <!-- Call to Action – white background, dark text -->
-    <section class="bg-dark py-16 text-center">
+    <!-- CTA (dark) -->
+    <section class="bg-dark text-white py-16 text-center">
         <div class="container mx-auto px-6">
-            <h2 class="text-3xl font-bold text-white">Need a Service?</h2>
-            <p class="text-xl text-white mt-4">Contact us for a quote or emergency support.</p>
+            <h2 class="text-3xl font-bold">Need a Service?</h2>
+            <p class="text-xl text-gray-300 mt-4">Contact us for a quote or emergency support.</p>
             <div class="mt-8 flex flex-col sm:flex-row justify-center gap-4">
                 <a href="contact.html" class="btn-red text-white px-8 py-3 rounded font-semibold text-lg inline-flex items-center justify-center">
                     <i class="fas fa-file-alt mr-2"></i> Get a Quote
@@ -274,109 +184,82 @@
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="bg-dark text-gray-300 py-12">
-        <div class="container mx-auto px-6">
-            <div class="grid md:grid-cols-4 gap-8">
-                <div>
-                    <img src="images/TMS_LOGO.jpeg" alt="Thama Mining Solutions" class="h-12 mb-4" onerror="this.style.display='none'">
-                    <p>Mining services & engineering contractor.<br>B2B support for mines.</p>
-                </div>
-                <div>
-                    <h4 class="text-white font-semibold mb-4">Quick Links</h4>
-                    <ul class="space-y-2">
-                        <li><a href="index.html" class="hover:text-gold">Home</a></li>
-                        <li><a href="about.html" class="hover:text-gold">About</a></li>
-                        <li><a href="services.html" class="hover:text-gold">Services</a></li>
-                        <li><a href="contact.html" class="hover:text-gold">Contact</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="text-white font-semibold mb-4">Contact</h4>
-                    <p class="flex items-center"><i class="fas fa-phone mr-2 w-5"></i> <a href="tel:0812474607" class="hover:text-gold">081 247 4607</a></p>
-                    <p class="flex items-center mt-2"><i class="fas fa-envelope mr-2 w-5"></i> <a href="mailto:thabom@thamaminingsolutions.com" class="hover:text-gold">thabom@thamaminingsolutions.com</a></p>
-                    <p class="flex items-center mt-2"><i class="fas fa-map-marker-alt mr-2 w-5"></i> 1348 Magongoa Village, Mokopane, 0601</p>
-                </div>
-                <div>
-                    <h4 class="text-white font-semibold mb-4">Emergency</h4>
-                    <p class="text-red-500 font-bold">24/7 Call‑Out Available</p>
-                    <p class="mt-2">When your operations stop, we move.</p>
+<!-- Footer -->
+<footer class="bg-dark text-gray-300 py-12">
+    <div class="container mx-auto px-6">
+        <div class="grid md:grid-cols-4 gap-8">
+            <div>
+                <img src="images/TMS_LOGO.jpeg" alt="Thama Mining Solutions" class="h-[6rem] mb-4 w-auto" onerror="this.style.display='none'">
+                <p>Mining services & engineering contractor.<br>B2B support for mines.</p>
+            </div>
+            <div>
+                <h4 class="text-white font-semibold mb-4">Quick Links</h4>
+                <ul class="space-y-2">
+                    <li><a href="index.html" class="hover:text-gold">Home</a></li>
+                    <li><a href="about.html" class="hover:text-gold">About</a></li>
+                    <li><a href="services.html" class="hover:text-gold">Services</a></li>
+                    <li><a href="contact.html" class="hover:text-gold">Contact</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-white font-semibold mb-4">Contact</h4>
+                <div class="space-y-3">
+                    <div class="flex items-center">
+                        <i class="fas fa-phone w-5 mr-2"></i>
+                        <a href="tel:0812474607" class="hover:text-gold">081 247 4607</a>
+                    </div>
+                    <div class="flex items-center">
+                        <i class="fas fa-envelope w-5 mr-2"></i>
+                        <a href="mailto:thabom@thamaminingsolutions.com" class="hover:text-gold">thabom@thamaminingsolutions.com</a>
+                    </div>
+                    <div class="flex items-start">
+                        <i class="fas fa-map-marker-alt w-5 mr-2 mt-0.5"></i>
+                        <span>1348 Magongoa Village, Mokopane, 0601</span>
+                    </div>
                 </div>
             </div>
-            <div class="border-t border-gray-700 mt-8 pt-6 text-center text-sm">
-                &copy; 2025 Thama Mining Solutions (Pty) Ltd. All rights reserved.
+            <div>
+                <h4 class="text-white font-semibold mb-4">Emergency</h4>
+                <p class="text-red-500 font-bold">24/7 Call‑Out Available</p>
+                <p class="mt-2">When your operations stop, we move.</p>
             </div>
         </div>
-    </footer>
+        <div class="border-t border-gray-700 mt-8 pt-6 text-center text-sm">
+            &copy; 2025 Thama Mining Solutions (Pty) Ltd. All rights reserved.<br>
+            Designed by <a href="https://precisiondesignsagency.com/" target="_blank" class="text-gold hover:underline">Precision Designs Agency</a>
+        </div>
+    </div>
+</footer>
 
-    <a href="https://wa.me/27812474607?text=Hello%2C%20I%20need%20mining%20support" class="floating-wa" target="_blank" rel="noopener noreferrer">
-        <i class="fab fa-whatsapp"></i>
-    </a>
+    <a href="https://wa.me/27812474607?text=Hello%2C%20I%20need%20mining%20support" class="floating-wa" target="_blank"><i class="fab fa-whatsapp"></i></a>
 
     <script>
-        // Slideshow logic
-        const slideshows = {};
-
-        function initSlideshow(id) {
-            const container = document.getElementById(id);
-            if (!container) return;
-            const slides = container.querySelectorAll('.slide');
-            const dots = container.querySelectorAll('.slide-dot');
-            slideshows[id] = { current: 0, slides, dots, timer: null };
-            startAutoPlay(id);
-        }
-
-        function showSlide(id, index) {
-            const ss = slideshows[id];
-            if (!ss) return;
-            ss.slides.forEach((s, i) => {
-                s.classList.toggle('active', i === index);
-            });
-            ss.dots.forEach((d, i) => {
-                d.classList.toggle('active', i === index);
-            });
-            ss.current = index;
-        }
-
-        function changeSlide(id, dir) {
-            const ss = slideshows[id];
-            if (!ss) return;
-            resetTimer(id);
-            let next = (ss.current + dir + ss.slides.length) % ss.slides.length;
-            showSlide(id, next);
-        }
-
-        function goToSlide(id, index) {
-            resetTimer(id);
-            showSlide(id, index);
-        }
-
-        function startAutoPlay(id) {
-            const ss = slideshows[id];
-            ss.timer = setInterval(() => {
-                let next = (ss.current + 1) % ss.slides.length;
-                showSlide(id, next);
-            }, 4000);
-        }
-
-        function resetTimer(id) {
-            const ss = slideshows[id];
-            if (ss.timer) clearInterval(ss.timer);
-            startAutoPlay(id);
-        }
-
-        // Mobile menu toggle
+        // Mobile menu
         const menuBtn = document.getElementById('menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
-        if (menuBtn && mobileMenu) {
-            menuBtn.addEventListener('click', () => {
-                mobileMenu.classList.toggle('hidden');
-            });
-        }
+        if (menuBtn && mobileMenu) menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
 
-        document.addEventListener('DOMContentLoaded', () => {
-            initSlideshow('pipeSlideshow');
-        });
+        // Slideshow
+        const slides = document.querySelectorAll('#pipeSlideshow .slide');
+        const dots = document.querySelectorAll('#pipeSlideshow .dot');
+        let current = 0, timer;
+        function showSlide(index) {
+            slides.forEach((s, i) => s.classList.toggle('opacity-100', i === index));
+            dots.forEach((d, i) => d.classList.toggle('bg-white', i === index));
+            current = index;
+        }
+        function nextSlide() { showSlide((current + 1) % slides.length); }
+        function startAuto() { timer = setInterval(nextSlide, 4000); }
+        function resetAuto() { clearInterval(timer); startAuto(); }
+        dots.forEach(dot => dot.addEventListener('click', function() {
+            const idx = parseInt(this.getAttribute('data-index'));
+            resetAuto(); showSlide(idx);
+        }));
+        window.changeSlide = function(dir) {
+            resetAuto();
+            showSlide((current + dir + slides.length) % slides.length);
+        };
+        startAuto();
     </script>
 </body>
 </html>
