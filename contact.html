@@ -32,40 +32,38 @@
 <body class="bg-light font-sans antialiased">
 
     <!-- Navbar (same) -->
-    <nav class="bg-dark text-white py-4 px-6 md:px-12 sticky top-0 z-40">
-        <div class="flex justify-between items-center">
-            <div class="flex items-center">
-                <div class="bg-white p-1 rounded shadow-md">
-                    <img src="images/TMS_LOGO.jpeg" alt="Thama Mining Solutions" class="h-[4rem] w-auto object-contain">
-                </div>
-            </div>
-            <div class="hidden md:flex space-x-8 font-medium">
-                <a href="index.html" class="hover:text-gold transition">Home</a>
-                <a href="about.html" class="hover:text-gold transition">About</a>
-                <a href="services.html" class="hover:text-gold transition">Services</a>
-                <a href="contact.html" class="text-gold border-b-2 border-gold pb-1">Contact</a>
-            </div>
-            <div class="md:hidden">
-                <button id="menu-btn" class="focus:outline-none"><i class="fas fa-bars text-2xl"></i></button>
-            </div>
-            <a href="tel:0812474607" class="hidden md:inline-block bg-red-600 hover:bg-red-700 text-white px-5 py-2 rounded font-semibold transition">
-                <i class="fas fa-phone-alt mr-2"></i> Call Now
-            </a>
+    <nav class="bg-white text-gray-800 py-4 px-6 md:px-12 sticky top-0 z-40 shadow-sm">
+    <div class="flex justify-between items-center">
+        <div class="flex items-center">
+            <img src="images/TMS_LOGO.jpeg" alt="Thama Mining Solutions" class="h-[4rem] w-auto object-contain">
         </div>
-        <div id="mobile-menu" class="hidden md:hidden mt-4 pt-4 border-t border-gray-700">
-            <a href="index.html" class="block py-2 hover:text-gold transition">Home</a>
-            <a href="about.html" class="block py-2 hover:text-gold transition">About</a>
-            <a href="services.html" class="block py-2 hover:text-gold transition">Services</a>
-            <a href="contact.html" class="block py-2 text-gold transition">Contact</a>
-            <a href="tel:0812474607" class="block mt-2 bg-red-600 text-white text-center px-4 py-2 rounded font-semibold transition">
-                <i class="fas fa-phone-alt mr-2"></i> Call Now
-            </a>
+        <div class="hidden md:flex space-x-8 font-medium">
+            <a href="index.html" class="hover:text-gold transition">Home</a>
+            <a href="about.html" class="hover:text-gold transition">About</a>
+            <a href="services.html" class="hover:text-gold transition">Services</a>
+            <a href="contact.html" class="text-gold border-b-2 border-gold pb-1">Contact</a>
         </div>
-    </nav>
+        <div class="md:hidden">
+            <button id="menu-btn" class="focus:outline-none"><i class="fas fa-bars text-2xl text-gray-800"></i></button>
+        </div>
+        <a href="tel:0812474607" class="hidden md:inline-block bg-red-600 hover:bg-red-700 text-white px-5 py-2 rounded font-semibold transition">
+            <i class="fas fa-phone-alt mr-2"></i> Call Now
+        </a>
+    </div>
+    <div id="mobile-menu" class="hidden md:hidden mt-4 pt-4 border-t border-gray-200">
+        <a href="index.html" class="block py-2 hover:text-gold transition">Home</a>
+        <a href="about.html" class="block py-2 hover:text-gold transition">About</a>
+        <a href="services.html" class="block py-2 hover:text-gold transition">Services</a>
+        <a href="contact.html" class="block py-2 text-gold transition">Contact</a>
+        <a href="tel:0812474607" class="block mt-2 bg-red-600 text-white text-center px-4 py-2 rounded font-semibold transition">
+            <i class="fas fa-phone-alt mr-2"></i> Call Now
+        </a>
+    </div>
+</nav>
 
     <!-- Hero -->
     <section class="relative bg-dark text-white py-20 bg-cover bg-center" style="background-image: url('images/contact_banner.jpg'); background-blend-mode: overlay; background-color: rgba(0,0,0,0.6);">
-        <div class="absolute inset-0 bg-black bg-opacity-50"></div>
+        <div class="absolute inset-0 bg-black bg-opacity-0"></div>
         <div class="relative container mx-auto px-6 text-center">
             <h1 class="text-4xl md:text-5xl font-bold">Contact Us</h1>
             <div class="w-20 h-1 bg-gold mx-auto mt-4"></div>
