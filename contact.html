@@ -26,6 +26,7 @@
     <meta name="twitter:description" content="Reach out for quotes, emergency support, or general inquiries. Fast response, 24/7 availability.">
     <meta name="twitter:image" content="images/contact_banner.jpg">
     
+    <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%231A1A1A'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial, sans-serif' font-size='52' font-weight='bold' fill='%23D4A017'%3ETM%3C/text%3E%3C/svg%3E">
     
     <!-- Tailwind & Font Awesome -->
@@ -58,35 +59,35 @@
 </head>
 <body class="bg-light font-sans antialiased">
 
-    <!-- Navbar (same) -->
+    <!-- Navbar -->
     <nav class="bg-white text-gray-800 py-4 px-6 md:px-12 sticky top-0 z-40 shadow-sm">
-    <div class="flex justify-between items-center">
-        <div class="flex items-center">
-            <img src="images/TMS_LOGO.jpeg" alt="Thama Mining Solutions" class="h-[4rem] w-auto object-contain">
+        <div class="flex justify-between items-center">
+            <div class="flex items-center">
+                <img src="images/TMS_LOGO.jpeg" alt="Thama Mining Solutions" class="h-[4rem] w-auto object-contain">
+            </div>
+            <div class="hidden md:flex space-x-8 font-medium">
+                <a href="index.html" class="hover:text-gold transition">Home</a>
+                <a href="about.html" class="hover:text-gold transition">About</a>
+                <a href="services.html" class="hover:text-gold transition">Services</a>
+                <a href="contact.html" class="text-gold border-b-2 border-gold pb-1">Contact</a>
+            </div>
+            <div class="md:hidden">
+                <button id="menu-btn" class="focus:outline-none"><i class="fas fa-bars text-2xl text-gray-800"></i></button>
+            </div>
+            <a href="tel:0812474607" class="hidden md:inline-block bg-red-600 hover:bg-red-700 text-white px-5 py-2 rounded font-semibold transition">
+                <i class="fas fa-phone-alt mr-2"></i> Call Now
+            </a>
         </div>
-        <div class="hidden md:flex space-x-8 font-medium">
-            <a href="index.html" class="hover:text-gold transition">Home</a>
-            <a href="about.html" class="hover:text-gold transition">About</a>
-            <a href="services.html" class="hover:text-gold transition">Services</a>
-            <a href="contact.html" class="text-gold border-b-2 border-gold pb-1">Contact</a>
+        <div id="mobile-menu" class="hidden md:hidden mt-4 pt-4 border-t border-gray-200">
+            <a href="index.html" class="block py-2 hover:text-gold transition">Home</a>
+            <a href="about.html" class="block py-2 hover:text-gold transition">About</a>
+            <a href="services.html" class="block py-2 hover:text-gold transition">Services</a>
+            <a href="contact.html" class="block py-2 text-gold transition">Contact</a>
+            <a href="tel:0812474607" class="block mt-2 bg-red-600 text-white text-center px-4 py-2 rounded font-semibold transition">
+                <i class="fas fa-phone-alt mr-2"></i> Call Now
+            </a>
         </div>
-        <div class="md:hidden">
-            <button id="menu-btn" class="focus:outline-none"><i class="fas fa-bars text-2xl text-gray-800"></i></button>
-        </div>
-        <a href="tel:0812474607" class="hidden md:inline-block bg-red-600 hover:bg-red-700 text-white px-5 py-2 rounded font-semibold transition">
-            <i class="fas fa-phone-alt mr-2"></i> Call Now
-        </a>
-    </div>
-    <div id="mobile-menu" class="hidden md:hidden mt-4 pt-4 border-t border-gray-200">
-        <a href="index.html" class="block py-2 hover:text-gold transition">Home</a>
-        <a href="about.html" class="block py-2 hover:text-gold transition">About</a>
-        <a href="services.html" class="block py-2 hover:text-gold transition">Services</a>
-        <a href="contact.html" class="block py-2 text-gold transition">Contact</a>
-        <a href="tel:0812474607" class="block mt-2 bg-red-600 text-white text-center px-4 py-2 rounded font-semibold transition">
-            <i class="fas fa-phone-alt mr-2"></i> Call Now
-        </a>
-    </div>
-</nav>
+    </nav>
 
     <!-- Hero -->
     <section class="relative bg-dark text-white py-20 bg-cover bg-center" style="background-image: url('images/contact_banner.jpg'); background-blend-mode: overlay; background-color: rgba(0,0,0,0.6);">
@@ -98,10 +99,10 @@
         </div>
     </section>
 
-    <!-- Desktop: two columns, mobile: stacked as per order -->
+    <!-- Contact Info & Form -->
     <section class="bg-white py-16">
         <div class="container mx-auto px-6">
-            <!-- Mobile layout (order used) -->
+            <!-- Mobile layout -->
             <div class="md:hidden space-y-12">
                 <!-- Get in Touch -->
                 <div>
@@ -110,15 +111,25 @@
                     <div class="space-y-6">
                         <div class="flex items-start gap-4">
                             <i class="fas fa-phone-alt text-red text-2xl mt-1"></i>
-                            <div><h3 class="font-semibold">Phone</h3><p><a href="tel:0812474607" class="hover:text-red">081 247 4607</a></p><p class="text-sm text-gray-500">Available 6am–5pm Mon–Fri, 7am–3pm Sat</p></div>
+                            <div>
+                                <h3 class="font-semibold">Phone</h3>
+                                <p><a href="tel:0812474607" class="hover:text-red">081 247 4607</a> / <a href="tel:0711840641" class="hover:text-red">071 184 0641</a></p>
+                                <p class="text-sm text-gray-500">Available 6am–5pm Mon–Fri, 7am–3pm Sat</p>
+                            </div>
                         </div>
                         <div class="flex items-start gap-4">
                             <i class="fas fa-envelope text-red text-2xl mt-1"></i>
-                            <div><h3 class="font-semibold">Email</h3><p><a href="mailto:thabom@thamaminingsolutions.com" class="hover:text-red">thabom@thamaminingsolutions.com</a></p></div>
+                            <div>
+                                <h3 class="font-semibold">Email</h3>
+                                <p><a href="mailto:thabo@thamamining.co.za" class="hover:text-red">thabo@thamamining.co.za</a></p>
+                            </div>
                         </div>
                         <div class="flex items-start gap-4">
                             <i class="fas fa-map-marker-alt text-red text-2xl mt-1"></i>
-                            <div><h3 class="font-semibold">Address</h3><p>1348 Magongoa Village, Mokopane, 0601, South Africa</p></div>
+                            <div>
+                                <h3 class="font-semibold">Address</h3>
+                                <p>1348 Magongoa Village, Mokopane, 0601, South Africa</p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -174,15 +185,25 @@
                     <div class="space-y-6">
                         <div class="flex items-start gap-4">
                             <i class="fas fa-phone-alt text-red text-2xl mt-1"></i>
-                            <div><h3 class="font-semibold">Phone</h3><p><a href="tel:0812474607" class="hover:text-red">081 247 4607</a></p><p class="text-sm text-gray-500">Available 6am–5pm Mon–Fri, 7am–3pm Sat</p></div>
+                            <div>
+                                <h3 class="font-semibold">Phone</h3>
+                                <p><a href="tel:0812474607" class="hover:text-red">081 247 4607</a> / <a href="tel:0711840641" class="hover:text-red">071 184 0641</a></p>
+                                <p class="text-sm text-gray-500">Available 6am–5pm Mon–Fri, 7am–3pm Sat</p>
+                            </div>
                         </div>
                         <div class="flex items-start gap-4">
                             <i class="fas fa-envelope text-red text-2xl mt-1"></i>
-                            <div><h3 class="font-semibold">Email</h3><p><a href="mailto:thabom@thamaminingsolutions.com" class="hover:text-red">thabom@thamaminingsolutions.com</a></p></div>
+                            <div>
+                                <h3 class="font-semibold">Email</h3>
+                                <p><a href="mailto:thabo@thamamining.co.za" class="hover:text-red">thabo@thamamining.co.za</a></p>
+                            </div>
                         </div>
                         <div class="flex items-start gap-4">
                             <i class="fas fa-map-marker-alt text-red text-2xl mt-1"></i>
-                            <div><h3 class="font-semibold">Address</h3><p>1348 Magongoa Village, Mokopane, 0601, South Africa</p></div>
+                            <div>
+                                <h3 class="font-semibold">Address</h3>
+                                <p>1348 Magongoa Village, Mokopane, 0601, South Africa</p>
+                            </div>
                         </div>
                     </div>
                     <div class="mt-8 h-64 bg-light rounded-lg overflow-hidden shadow"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14414.117857732442!2d29.044322!3d-24.185964!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1ec099fd47dfc4df%3A0xab9a0c5dddb7a3b0!2sMokopane%2C%200600!5e0!3m2!1sen!2sza!4v1691768285123!5m2!1sen!2sza" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe></div>
@@ -227,56 +248,56 @@
         </div>
     </section>
 
-     <!-- Footer -->
-<footer class="bg-dark text-gray-300 py-12">
-    <div class="container mx-auto px-6">
-        <div class="grid md:grid-cols-4 gap-8">
-            <div>
-                <img src="images/TMS_LOGO.jpeg" alt="Thama Mining Solutions" class="h-[6rem] mb-4 w-auto" onerror="this.style.display='none'">
-                <p>Mining services & engineering contractor.<br>B2B support for mines.</p>
-            </div>
-            <div>
-                <h4 class="text-white font-semibold mb-4">Quick Links</h4>
-                <ul class="space-y-2">
-                    <li><a href="index.html" class="hover:text-gold">Home</a></li>
-                    <li><a href="about.html" class="hover:text-gold">About</a></li>
-                    <li><a href="services.html" class="hover:text-gold">Services</a></li>
-                    <li><a href="contact.html" class="hover:text-gold">Contact</a></li>
-                </ul>
-            </div>
-            <div>
-                <h4 class="text-white font-semibold mb-4">Contact</h4>
-                <div class="space-y-3">
-                    <div class="flex items-center">
-                        <i class="fas fa-phone w-5 mr-2"></i>
-                        <a href="tel:0812474607" class="hover:text-gold">081 247 4607</a>
-                    </div>
-                     <div class="flex items-center">
-                        <i class="fas fa-phone w-5 mr-2"></i>
-                        <a href="tel:0711840641" class="hover:text-gold">071 184 0641</a>
-                    </div>
-                    <div class="flex items-center">
-                        <i class="fas fa-envelope w-5 mr-2"></i>
-                        <a href="mailto:thabo@thamamining.co.za" class="hover:text-gold">thabo@thamamining.co.za</a>
-                    </div>
-                    <div class="flex items-start">
-                        <i class="fas fa-map-marker-alt w-5 mr-2 mt-0.5"></i>
-                        <span>1348 Magongoa Village, Mokopane, 0601</span>
+    <!-- Footer -->
+    <footer class="bg-dark text-gray-300 py-12">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <img src="images/TMS_LOGO.jpeg" alt="Thama Mining Solutions" class="h-[6rem] mb-4 w-auto" onerror="this.style.display='none'">
+                    <p>Mining services & engineering contractor.<br>B2B support for mines.</p>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="hover:text-gold">Home</a></li>
+                        <li><a href="about.html" class="hover:text-gold">About</a></li>
+                        <li><a href="services.html" class="hover:text-gold">Services</a></li>
+                        <li><a href="contact.html" class="hover:text-gold">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Contact</h4>
+                    <div class="space-y-3">
+                        <div class="flex items-center">
+                            <i class="fas fa-phone w-5 mr-2"></i>
+                            <a href="tel:0812474607" class="hover:text-gold">081 247 4607</a>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-phone w-5 mr-2"></i>
+                            <a href="tel:0711840641" class="hover:text-gold">071 184 0641</a>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-envelope w-5 mr-2"></i>
+                            <a href="mailto:thabo@thamamining.co.za" class="hover:text-gold">thabo@thamamining.co.za</a>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-map-marker-alt w-5 mr-2 mt-0.5"></i>
+                            <span>1348 Magongoa Village, Mokopane, 0601</span>
+                        </div>
                     </div>
                 </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Emergency</h4>
+                    <p class="text-red-500 font-bold">24/7 Call‑Out Available</p>
+                    <p class="mt-2">When your operations stop, we move.</p>
+                </div>
             </div>
-            <div>
-                <h4 class="text-white font-semibold mb-4">Emergency</h4>
-                <p class="text-red-500 font-bold">24/7 Call‑Out Available</p>
-                <p class="mt-2">When your operations stop, we move.</p>
+            <div class="border-t border-gray-700 mt-8 pt-6 text-center text-sm">
+                &copy; 2026 Thama Mining Solutions (Pty) Ltd. All rights reserved.<br>
+                Designed by <a href="https://precisiondesignsagency.com/" target="_blank" class="text-gold hover:underline">Precision Designs Agency</a>
             </div>
         </div>
-        <div class="border-t border-gray-700 mt-8 pt-6 text-center text-sm">
-            &copy; 2026 Thama Mining Solutions (Pty) Ltd. All rights reserved.<br>
-            Designed by <a href="https://precisiondesignsagency.com/" target="_blank" class="text-gold hover:underline">Precision Designs Agency</a>
-        </div>
-    </div>
-</footer>
+    </footer>
 
     <a href="https://wa.me/27812474607?text=Hello%2C%20I%20need%20mining%20support" class="floating-wa" target="_blank"><i class="fab fa-whatsapp"></i></a>
 
